@@ -1,6 +1,18 @@
 \section{Pregunta N$^{\circ}$21\qquad Nombre}
 
 \begin{frame}
+	\begin{definition}[Definida postiva]
+		Sea $A\in\mathbb{R}^{n\times}$ una matriz.
+		Decimos que $A$ es definida positiva sii
+		\begin{math}
+			\forall x\neq0\in\mathbb{R}^{n}:
+			x^{T}Ax>
+			0.
+		\end{math}
+	\end{definition}
+\end{frame}
+
+\begin{frame}
 	\begin{enumerate}\setcounter{enumi}{20}
 		\item
 
@@ -17,12 +29,82 @@
 	\end{enumerate}
 
 	\begin{solution}
-		.
+		Sea
+		\begin{math}
+			x=
+			\begin{bmatrix}
+				x_{1} \\
+				x_{2} \\
+				x_{3}
+			\end{bmatrix}\in
+			\mathbb{R}^{3}
+		\end{math}
+		no nulo.
+		Entonces,
+		\begin{align*}
+			x^{T}Bx & =
+			\begin{bmatrix}
+				x_{1} & x_{2} & x_{3}
+			\end{bmatrix}
+			\begin{bmatrix}
+				4 & 2 & 6  \\
+				2 & 2 & 5  \\
+				6 & 5 & 29
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_{1} \\
+				x_{2} \\
+				x_{3}
+			\end{bmatrix}        \\
+			x^{T}Bx & =
+			4x^{2}_{1}+
+			2x^{2}_{2}+
+			29x^{2}_{3}+
+			4x_{1}x_{2}+
+			12x_{1}x_{3}+
+			10x_{2}x_{3}.         \\
+			x^{T}Bx & =
+			4x^{2}_{1}+
+			x^{2}_{2}+
+			\left[{\left(5x_{3}\right)}^{2}+
+			2\left(x_{2}\right)\left(5x_{3}\right)+
+			{\left(x_{2}\right)}^{2}
+			\right]+
+			4x_{1}x_{2}+
+			12x_{1}x_{3}+
+			{\left(2x_{3}\right)}^{2}+
+			9x^{2}_{1}-9x^{2}_{1} \\
+			x^{T}Bx & =
+			\left[
+			{\left(3x_{1}\right)}^{2}+
+			2\left(3x_{1}\right)\left(2x_{3}\right)+
+			{\left(2x_{3}\right)}^{2}
+			\right]+
+			\left[{\left(5x_{3}\right)}^{2}+
+			2\left(x_{2}\right)\left(5x_{3}\right)+
+			{\left(x_{2}\right)}^{2}
+			\right]+
+			\left[
+			{\left(2x_{1}\right)}^{2}+
+			2\left(2x_{1}\right)\left(x_{2}\right)+
+			{\left(x_{2}\right)}^{2}
+			\right]               \\
+			x^{T}Bx & =
+			\underbrace{{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}}_{>0}+
+			\underbrace{{\left(x_{2}+5x_{3}\right)}^{2}}_{\geq0}+
+			\underbrace{{\left(2x_{1}+x_{2}\right)}^{2}}_{\geq0}
+			\label{eq:positive}\tag{$\star$}
+		\end{align*}
+		Para que~\eqref{eq:positive} sea positivo, basta que
+		\begin{math}
+			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}
+		\end{math}
+		sea positivo
 	\end{solution}
 \end{frame}
 
 \begin{frame}
 	\begin{solution}
-		.
+
 	\end{solution}
 \end{frame}
