@@ -5,9 +5,9 @@
 		Si $A\in\mathbb{C}^{m\times n}$, entonces $A$ tiene una
 		descomposición de valores singulares.
 	\end{theorem}
-	
+
 	\begin{proof}
-		$$
+		.
 	\end{proof}
 \end{frame}
 
@@ -15,8 +15,7 @@
 	\begin{enumerate}\setcounter{enumi}{29}
 		\item
 
-		      Encuentre la descomposición de valores singulares para la
-		      matriz
+		      Sea
 		      \begin{math}
 			      A=
 			      \begin{bmatrix}
@@ -24,93 +23,107 @@
 				      2 & 3 & -2
 			      \end{bmatrix}
 		      \end{math}.
+		      Calcule la descomposición de valores singulares de $A$.
 	\end{enumerate}
 
 	\begin{solution}
-		Hallamos la transpuesta de la matriz:
-  
-            \begin{math}
-			      A^{T}=
-			      \begin{bmatrix}
-				      3 & 2   \\
-				      2 & 3   \\
-                        2 & -2  \\  
-			      \end{bmatrix}
-		\end{math}. \\
-        Ahora multiplicamos la matriz A con su transpuesta: \\
-            \begin{math}
-			    A^{T} . A =
-			      \begin{bmatrix}
-				      3 & 2   \\
-				      2 & 3   \\
-                        2 & -2  \\  
-			      \end{bmatrix} .
-                    \begin{bmatrix}
-				      3 & 2 & 2  \\
-				      2 & 3 & -2  \\    
-			      \end{bmatrix} =
-                    \begin{bmatrix}
-				      13 & 12 & 2  \\
-				      12 & 13 & -2  \\
-                        2 & -2  & 8\\  
-			      \end{bmatrix}              
-		  \end{math}. \\
-        Ahora hallaremos el polinomio característico, buscando luego hallar los autovalores y autovectores: \\
-            \begin{math}
-                P_{\lambda}(A^{T}.A)= \left | A^{T}.A-\lambda I \right | \\
-                P_{\lambda}(A^{T}.A)= \left |
-                \begin{pmatrix}
-				      13 & 12 & 2  \\
-				      12 & 13 & -2  \\
-                        2 & -2  & 8\\  
-			    \end{pmatrix} - 
-                \begin{pmatrix}
-				      \lambda & 0 & 0  \\
-				      0 & \lambda & 0  \\
-                        0  & 0  & \lambda \\  
-			    \end{pmatrix} \right | \\
-                P_{\lambda}(A^{T}.A)= 
-                \begin{vmatrix}
-				      13 - \lambda & 12 & 2  \\
-				      12 & 13 - \lambda & -2  \\
-                        2 & -2  & 8 - \lambda \\  
-			    \end{vmatrix} = 
-                - \lambda (\lambda - 25) (\lambda - 9) \\    
-            \end{math}
-                Hallamos las raices igualando a cero: \\
-               - \lambda (\lambda - 25) (\lambda - 9) = 0 \\
-                Las raíces halladas son:\\
-                \lambda _{1}=25, \lambda _{2}=9 , \lambda _{3}=0 \\
-                Ahora \quad hallamos \quad los \quad autovectores: \\           
+		El polinomio característico de la matriz
+		\begin{math}
+			A^{T}A=
+			\begin{bmatrix}
+				3 & 2  \\
+				2 & 3  \\
+				2 & -2
+			\end{bmatrix}
+			\begin{bmatrix}
+				3 & 2 & 2  \\
+				2 & 3 & -2
+			\end{bmatrix}=
+			\begin{bmatrix}
+				13 & 12 & 2  \\
+				12 & 13 & -2 \\
+				2  & -2 & 8
+			\end{bmatrix}
+		\end{math}
+		es
+		\begin{equation*}
+			P_{A^{T}A}
+			\left(\lambda\right)=
+			\begin{vmatrix}
+				A^{T}A-\lambda I
+			\end{vmatrix}=
+			\begin{vmatrix}
+				\begin{bmatrix}
+					13 & 12 & 2  \\
+					12 & 13 & -2 \\
+					2  & -2 & 8  \\
+				\end{bmatrix}-
+				\lambda
+				\begin{bmatrix}
+					1 & 0 & 0 \\
+					0 & 1 & 0 \\
+					0 & 0 & 1
+				\end{bmatrix}
+			\end{vmatrix}=
+			\begin{vmatrix}
+				13 - \lambda & 12           & 2           \\
+				12           & 13 - \lambda & -2          \\
+				2            & -2           & 8 - \lambda \\
+			\end{vmatrix}=
+			-\lambda\left(\lambda-25\right)\left(\lambda-9\right).
+		\end{equation*}
+		Las raíces de
+		\begin{math}
+			P_{A^{T}A}
+			\left(\lambda\right)=
+			0
+		\end{math}
+		son los autovalores de $A^{T}A$, a saber, $\lambda_{1}=25$,
+		$\lambda_{2}=9$ y $\lambda_{3}=0$.
+
+		Hallemos una base para los autoespacios de $A^{T}A$
+
+		\begin{equation*}
+			S\left(\lambda_{i}\right)=
+			\left\{
+			v\in\mathbb{R}^{3}\mid
+			A^{T}Av=\lambda_{i}v
+			\right\}\quad\text{para $i=1,2,3$}.
+		\end{equation*}
 	\end{solution}
+
+	\begin{itemize}
+		\item
+		      Para $\lambda_{1}=25$,
+		      \begin{equation*}
+			      P_{A^{T}A}
+			      \left(\lambda\right)=
+			      \begin{vmatrix}
+				      13 - \lambda_{1} & 12               & 2               \\
+				      12               & 13 - \lambda_{1} & -2              \\
+				      2                & -2               & 8 - \lambda_{1}
+			      \end{vmatrix} =
+			      \begin{vmatrix}
+				      -12 & 12  & 2   \\
+				      12  & -12 & -2  \\
+				      2   & -2  & -17
+			      \end{vmatrix}.
+		      \end{equation*}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	
-        Para: \lambda _{1}=25: \\
-        P_{\lambda}(A^{T}.A)= 
-            \begin{math}    
-                \begin{vmatrix}
-				      13 - \lambda & 12 & 2  \\
-				      12 & 13 - \lambda & -2  \\
-                        2 & -2  & 8 - \lambda \\  
-			    \end{vmatrix} = 
-                \begin{vmatrix}
-				        -12 & 12 & 2  \\
-				      12 & -12 & -2  \\
-                        2 & -2  & -17 \\  
-			    \end{vmatrix} 
-            \end{math} \\
+	\begin{solution}
 		Haciendo operaciones fila reducimos la matriz quedando:
-            \begin{math}
-            P_{\lambda}(A^{T}.A)=
-                \begin{vmatrix}
-				        1 & -1 & 0  \\
-				      0 &  0 & 1  \\
-                        0 &  0 & 0 \\  
-			    \end{vmatrix} 
-            \end{math} \\
-        Ahora hallaremos el espacio nulo mediante la siguiente ecuación:
-        
-
+		\begin{math}
+			P_{A^{T}A}
+			\left(\lambda\right)=
+			\begin{vmatrix}
+				1 & -1 & 0 \\
+				0 & 0  & 1 \\
+				0 & 0  & 0
+			\end{vmatrix}
+		\end{math}.
+		Ahora hallaremos el espacio nulo mediante la siguiente ecuación
+	\end{solution}
 \end{frame}
