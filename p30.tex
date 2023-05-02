@@ -16,7 +16,8 @@
 	\end{enumerate}
 
 	\begin{solution}
-		Hallamos la transpuesta de la matriz: \\
+		Hallamos la transpuesta de la matriz:
+  
             \begin{math}
 			      A^{T}=
 			      \begin{bmatrix}
@@ -24,15 +25,81 @@
 				      2 & 3   \\
                         2 & -2  \\  
 			      \end{bmatrix}
-		\end{math}.
-        Ahora multiplicamos la matriz A con su transpuesta:
-        $ A x $
-            
+		\end{math}. \\
+        Ahora multiplicamos la matriz A con su transpuesta: \\
+            \begin{math}
+			    A^{T} . A =
+			      \begin{bmatrix}
+				      3 & 2   \\
+				      2 & 3   \\
+                        2 & -2  \\  
+			      \end{bmatrix} .
+                    \begin{bmatrix}
+				      3 & 2 & 2  \\
+				      2 & 3 & -2  \\    
+			      \end{bmatrix} =
+                    \begin{bmatrix}
+				      13 & 12 & 2  \\
+				      12 & 13 & -2  \\
+                        2 & -2  & 8\\  
+			      \end{bmatrix}              
+		  \end{math}. \\
+        Ahora hallaremos el polinomio característico, buscando luego hallar los autovalores y autovectores: \\
+            \begin{math}
+                P_{\lambda}(A^{T}.A)= \left | A^{T}.A-\lambda I \right | \\
+                P_{\lambda}(A^{T}.A)= \left |
+                \begin{pmatrix}
+				      13 & 12 & 2  \\
+				      12 & 13 & -2  \\
+                        2 & -2  & 8\\  
+			    \end{pmatrix} - 
+                \begin{pmatrix}
+				      \lambda & 0 & 0  \\
+				      0 & \lambda & 0  \\
+                        0  & 0  & \lambda \\  
+			    \end{pmatrix} \right | \\
+                P_{\lambda}(A^{T}.A)= 
+                \begin{vmatrix}
+				      13 - \lambda & 12 & 2  \\
+				      12 & 13 - \lambda & -2  \\
+                        2 & -2  & 8 - \lambda \\  
+			    \end{vmatrix} = 
+                - \lambda (\lambda - 25) (\lambda - 9) \\    
+            \end{math}
+                Hallamos las raices igualando a cero: \\
+               - \lambda (\lambda - 25) (\lambda - 9) = 0 \\
+                Las raíces halladas son:\\
+                \lambda _{1}=25, \lambda _{2}=9 , \lambda _{3}=0 \\
+                Ahora \quad hallamos \quad los \quad autovectores: \\           
 	\end{solution}
 \end{frame}
 
 \begin{frame}
-	\begin{solution}
-		.
-	\end{solution}
+	
+        Para: \lambda _{1}=25: \\
+        P_{\lambda}(A^{T}.A)= 
+            \begin{math}    
+                \begin{vmatrix}
+				      13 - \lambda & 12 & 2  \\
+				      12 & 13 - \lambda & -2  \\
+                        2 & -2  & 8 - \lambda \\  
+			    \end{vmatrix} = 
+                \begin{vmatrix}
+				        -12 & 12 & 2  \\
+				      12 & -12 & -2  \\
+                        2 & -2  & -17 \\  
+			    \end{vmatrix} 
+            \end{math} \\
+		Haciendo operaciones fila reducimos la matriz quedando:
+            \begin{math}
+            P_{\lambda}(A^{T}.A)=
+                \begin{vmatrix}
+				        1 & -1 & 0  \\
+				      0 &  0 & 1  \\
+                        0 &  0 & 0 \\  
+			    \end{vmatrix} 
+            \end{math} \\
+        Ahora hallaremos el espacio nulo mediante la siguiente ecuación:
+        
+
 \end{frame}
