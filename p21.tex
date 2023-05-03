@@ -5,13 +5,13 @@
 		Sea $A\in\mathbb{R}^{n\times}$ una matriz.
 		Decimos que $A$ es definida positiva sii
 		\begin{math}
-			\forall x\neq0\in\mathbb{R}^{n}:
+			\forall x\in\mathbb{R}^{n}\setminus\left\{0\right\}:
 			x^{T}Ax>
 			0.
 		\end{math}
 	\end{definition}
 
-	\begin{block}{Matriz que no es simétrica}
+	\begin{example}
 		Sea
 		\begin{math}
 			M=
@@ -20,7 +20,7 @@
 				2 & 2
 			\end{bmatrix}
 		\end{math}
-		una matriz.
+		una matriz \alert{no simétrica}.
 		Entonces, para todo
 		\begin{math}
 			x=
@@ -28,8 +28,9 @@
 				x_{1} \\
 				x_{2}
 			\end{bmatrix}
+			\in\mathbb{R}^{2}\setminus\left\{0\right\}
 		\end{math}
-		no nulo se tiene que
+		se tiene que
 		\begin{equation*}
 			x^{T}Mx=
 			\begin{bmatrix}
@@ -48,7 +49,8 @@
 			x^{2}_{2}>
 			0.
 		\end{equation*}
-	\end{block}
+		$\therefore M$ es definida positiva.
+	\end{example}
 
 	\begin{theorem}
 		Sea $A\in\mathbb{R}^{n\times}$ una matriz simétrica.
@@ -60,7 +62,8 @@
 
 			\item
 
-			      Todas las matrices esquina $A_{k}$ tienen determinante positivo.
+			      Todas las matrices esquina $A_{k}$ tienen determinante
+			      positivo.
 
 			\item
 
@@ -68,6 +71,17 @@
 			      usando solo las operaciones elementales filas del tipo un
 			      múltiplo de una fila es sumada a otra fila y los
 			      elementos pivote serán todos positivos.
+
+			\item
+
+			      $A$ tiene una factorización de Cholesky $LL^{T}$
+			      (donde $L$ es triangular inferior con entradas positivas
+			      en su diagonal).
+
+			\item
+
+			      $A$ puede factorizarse como $B^{T}B$ para alguna matriz
+			      $B$ no singular.
 		\end{itemize}
 	\end{theorem}
 \end{frame}
@@ -88,7 +102,7 @@
 		      es definida positiva.
 	\end{enumerate}
 
-	\begin{solution}
+	\begin{solution}[Primera forma]
 		Sea
 		\begin{math}
 			x=
@@ -97,9 +111,8 @@
 				x_{2} \\
 				x_{3}
 			\end{bmatrix}\in
-			\mathbb{R}^{3}
-		\end{math}
-		no nulo.
+			\mathbb{R}^{3}\setminus\left\{0\right\}
+		\end{math}.
 		Entonces,
 		\begin{align*}
 			x^{T}Bx & =
@@ -115,68 +128,138 @@
 				x_{1} \\
 				x_{2} \\
 				x_{3}
-			\end{bmatrix}        \\
+			\end{bmatrix}      \\
 			x^{T}Bx & =
 			4x^{2}_{1}+
-			2x^{2}_{2}+
-			29x^{2}_{3}+
+			\textcolor{DarkGreen}{2x^{2}_{2}}+
+			\textcolor{DarkBlue}{29x^{2}_{3}}+
 			4x_{1}x_{2}+
 			12x_{1}x_{3}+
-			10x_{2}x_{3}.         \\
+			10x_{2}x_{3}.       \\
 			x^{T}Bx & =
-			4x^{2}_{1}+
-			x^{2}_{2}+
-			\left[{\left(5x_{3}\right)}^{2}+
+			\textcolor{DarkOrange}{4x^{2}_{1}}+
+			\textcolor{DarkGreen}{x^{2}_{2}}+
+			\left\{
+			\textcolor{DarkBlue}{{\left(5x_{3}\right)}^{2}}+
 			2\left(x_{2}\right)\left(5x_{3}\right)+
-			{\left(x_{2}\right)}^{2}
-			\right]+
+			\textcolor{DarkGreen}{{\left(x_{2}\right)}^{2}}
+			\right\}+
 			4x_{1}x_{2}+
 			12x_{1}x_{3}+
-			{\left(2x_{3}\right)}^{2}+
-			9x^{2}_{1}-9x^{2}_{1} \\
+			\textcolor{DarkBlue}{{\left(2x_{3}\right)}^{2}}+
+			\alert{9x^{2}_{1}}-
+			\alert{9x^{2}_{1}}. \\
 			x^{T}Bx & =
-			\left[
-			{\left(3x_{1}\right)}^{2}+
+			\left\{
+			{\alert{\left(3x_{1}\right)^{2}}}+
 			2\left(3x_{1}\right)\left(2x_{3}\right)+
 			{\left(2x_{3}\right)}^{2}
-			\right]+
-			\left[{\left(5x_{3}\right)}^{2}+
+			\right\}+
+			\left\{
+			{\left(5x_{3}\right)}^{2}+
 			2\left(x_{2}\right)\left(5x_{3}\right)+
 			{\left(x_{2}\right)}^{2}
-			\right]+
-			\left[
-			{\left(2x_{1}\right)}^{2}+
+			\right\}+
+			\left\{
+			\textcolor{DarkOrange}{{\left(2x_{1}\right)}^{2}}+
 			2\left(2x_{1}\right)\left(x_{2}\right)+
 			{\left(x_{2}\right)}^{2}
-			\right]               \\
+			\right\}.           \\
 			x^{T}Bx & =
-			\underbrace{{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}}_{>0}+
+			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}+
 			\underbrace{{\left(x_{2}+5x_{3}\right)}^{2}}_{\geq0}+
-			\underbrace{{\left(2x_{1}+x_{2}\right)}^{2}}_{\geq0}
-			\label{eq:positive}\tag{$\star$}
+			\underbrace{{\left(2x_{1}+x_{2}\right)}^{2}}_{\geq0}.
+			\label{eq:positive}\tag{$\bigstar$}
 		\end{align*}
-		Pero~\eqref{eq:positive} es positivo, porque
-		\begin{math}
-			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}
-		\end{math}
-		es positivo para cualquier $x_{1}$ y $x_{3}$ no nulos.
+		Para verificar que~\eqref{eq:positive} es positivo, supongamos
+		que~\eqref{eq:positive} es \alert{cero}, es decir,
+		\begin{equation*}
+			\alert{0}=
+			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}+
+			\underbrace{{\left(x_{2}+5x_{3}\right)}^{2}}_{=0}+
+			\underbrace{{\left(2x_{1}+x_{2}\right)}^{2}}_{=0}
+		\end{equation*}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
-	\begin{solution}
-		Del teorema,
+	Osea,
+	\begin{equation*}
+		\systeme{
+		2x_{1}+x_{2}=0,
+		x_{2}+5x_{3}=0
+		}
+		\xRightarrow{\text{eliminación gaussiana}}
+		\systeme{
+			x_{1}=5t,
+			x_{2}=-10t,
+			x_{3}=2t
+		},\quad
+		t\in\mathbb{R}\setminus\left\{0\right\}.
+	\end{equation*}
+	% \begin{math}
+	% 	x_{1}=\frac{-1}{2}x_{2}
+	% 	x_{2}=-5x_{3}
+	% \end{math}
+	Pero,
+	\begin{equation*}
+		{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}=
+			{\left(15t+4t\right)}^{2}-{\left(15t\right)}^{2}=
+		\alert{136t^{2}>0}.
+	\end{equation*}
+	Entonces, $\forall x\in\mathbb{R}^3\setminus\left\{0\right\}$:
+	\begin{equation*}
+		x^{T}Bx =
+			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}+
+		{\left(x_{2}+5x_{3}\right)}^{2}+
+		{\left(2x_{1}+x_{2}\right)}^{2}
+		\alert{>0}
+	\end{equation*}
+
+	$\therefore B$ es definida positiva.
+\end{frame}
+
+\begin{frame}
+	\begin{solution}[Segunda forma]
+		Como $B=B^{T}$ es simétrica, por el teorema anterior, cada matriz
+		esquina $B_{1}$, $B_{2}$ y $B_{3}$ tienen determinante positivo
+		sii $B$ es definida positiva.
+
 		\begin{align*}
 			\begin{vmatrix}
-				A_{1}
-			\end{vmatrix}= \\
+				B_{1}
+			\end{vmatrix}
+			                & =
 			\begin{vmatrix}
-				A_{2}
-			\end{vmatrix}= \\
+				b_{11}
+			\end{vmatrix}=
 			\begin{vmatrix}
-				A_{3}
-			\end{vmatrix}= \\
+				4
+			\end{vmatrix}=
+			\alert{4>0}.
+			\\
+			\begin{vmatrix}
+				B_{2}
+			\end{vmatrix} & =
+			\begin{vmatrix}
+				b_{11} & b_{12} \\
+				b_{21} & b_{22}
+			\end{vmatrix}=
+			\begin{vmatrix}
+				4 & 2 \\
+				2 & 2
+			\end{vmatrix}=
+			\alert{4>0}.
+			\\
+			\begin{vmatrix}
+				B_{3}
+			\end{vmatrix} & =
+			\begin{vmatrix}
+				B
+			\end{vmatrix}=
+			\alert{64>0}.
 		\end{align*}
+		$\therefore B$ es definida positiva.
 		% Supongamos que $x_{1}$ y $x_{3}$ son no nulos tal que
 		% \begin{math}
 		% 	{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}=
@@ -195,58 +278,4 @@
 		% Es decir, $x_{1}=0$ o $x_{3}=0$, pero esto contradice nuestra
 		% suposición de que $x$ es un vector no nulo.
 	\end{solution}
-\end{frame}
-
-\begin{frame}
-	Dado que conocemos el rango de 
-    \begin{math}
-        {\left(x_{2}+5x_{3}\right)}^{2}  
-    \end{math}
-    y
-    \begin{math}
-        {\left(2x_{1}+x_{2}\right)}^{2}
-    \end{math}
-    supondremos que estos tomaran sus valores minimos.
-    \begin{math}
-        {\left(x_{2}+5x_{3}\right)}^{2}=0
-        \\{\left(2x_{1}+x_{2}\right)}^{2}=0
-    \end{math}
-    \\resolviendo el sistemas nos queda
-    \begin{math}
-        \\x_{1}= \frac{-1}{2}x_{2}
-        \\x_{2}=-5x_{3}
-    \end{math}
-    \\quedandonos
-    \begin{math}
-        \\x_{1}= 5k
-        \\x_{2}=-10k
-        \\x_{3}=2k
-    \end{math}
-    \\donde k \in R-{0}, Ahora tenemos que verificar que 
-    \begin{math}
-			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}
-	\end{math}
-    sea positivo
-    \begin{math}
-			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}=
-            {\left(15k+4k\right)}^{2}-{\left(15k\right)}^{2}=
-            136k^{2}
-	\end{math}
-    \\Verificamos que
-    \begin{math}
-            136k^{2}>0
-	\end{math}
-    , por lo tanto la expresion
-    \begin{math}
-			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}>0
-	\end{math}
-    \\Entonces podemos asegurar que \\
-    \begin{math}
-        x^{T}Bx & =
-			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}+
-			{\left(x_{2}+5x_{3}\right)}^{2}+
-			{\left(2x_{1}+x_{2}\right)}^{2}
-			 >0  
-   \end{math}
-  \\ Por lo tanto, la matriz B es definida positiva
 \end{frame}
