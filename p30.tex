@@ -115,7 +115,7 @@
 
 \begin{frame}
 	\begin{solution}
-		Haciendo operaciones fila reducimos la matriz quedando:
+		Haciendo operaciones fila reducimos la matriz quedando: \\
 		\begin{math}
 			P_{A^{T}A}
 			\left(\lambda\right)=
@@ -123,14 +123,42 @@
 				1 & -1 & 0 \\
 				0 & 0  & 1 \\
 				0 & 0  & 0
-			\end{vmatrix}
+			\end{vmatrix} \\
 		\end{math}.
-		Ahora hallaremos el espacio nulo mediante la siguiente ecuación
+		Ahora hallaremos el espacio nulo mediante la siguiente ecuación: \\
+            \begin{bmatrix}
+				1 & -1 & 0 \\
+				2 &  0 & 1\\
+				2 &  0 & 0
+			\end{bmatrix}.
+			\begin{bmatrix}
+				x_{1}  \\
+				x_{2}  \\
+                x_{3}  \\
+			\end{bmatrix}=
+			\begin{bmatrix}
+				13 & 12 & 2  \\
+				12 & 13 & -2 \\
+				2  & -2 & 8
+			\end{bmatrix}
 
 		\begin{itemize}
-			\item
-
-			      Para $\lambda_{2}=9$,
+			\item 
+                Para $\lambda_{2}=9$,
+                \begin{equation}
+                     P_{A^{T}A}
+			      \left(\lambda\right)=
+			      \begin{vmatrix}
+				      13 - \lambda_{2} & 12               & 2               \\
+				      12               & 13 - \lambda_{2} & -2              \\
+				      2                & -2               & 8 - \lambda_{2}
+			      \end{vmatrix} =
+			      \begin{vmatrix}
+				      4   & 12  & 2   \\
+				      12  &  4  & -2  \\
+				      2   & -2  & -1
+			      \end{vmatrix}.
+                \end{equation}
 
 			\item
 
