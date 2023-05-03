@@ -198,5 +198,55 @@
 \end{frame}
 
 \begin{frame}
-	Hola
+	Dado que conocemos el rango de 
+    \begin{math}
+        {\left(x_{2}+5x_{3}\right)}^{2}  
+    \end{math}
+    y
+    \begin{math}
+        {\left(2x_{1}+x_{2}\right)}^{2}
+    \end{math}
+    supondremos que estos tomaran sus valores minimos.
+    \begin{math}
+        {\left(x_{2}+5x_{3}\right)}^{2}=0
+        \\{\left(2x_{1}+x_{2}\right)}^{2}=0
+    \end{math}
+    \\resolviendo el sistemas nos queda
+    \begin{math}
+        \\x_{1}= \frac{-1}{2}x_{2}
+        \\x_{2}=-5x_{3}
+    \end{math}
+    \\quedandonos
+    \begin{math}
+        \\x_{1}= 5k
+        \\x_{2}=-10k
+        \\x_{3}=2k
+    \end{math}
+    \\donde k \in R-{0}, Ahora tenemos que verificar que 
+    \begin{math}
+			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}
+	\end{math}
+    sea positivo
+    \begin{math}
+			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}=
+            {\left(15k+4k\right)}^{2}-{\left(15k\right)}^{2}=
+            136k^{2}
+	\end{math}
+    \\Verificamos que
+    \begin{math}
+            136k^{2}>0
+	\end{math}
+    , por lo tanto la expresion
+    \begin{math}
+			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}>0
+	\end{math}
+    \\Entonces podemos asegurar que \\
+    \begin{math}
+        x^{T}Bx & =
+			{\left(3x_{1}+2x_{3}\right)}^{2}-{\left(3x_{1}\right)}^{2}+
+			{\left(x_{2}+5x_{3}\right)}^{2}+
+			{\left(2x_{1}+x_{2}\right)}^{2}
+			 >0  
+   \end{math}
+  \\ Por lo tanto, la matriz B es definida positiva
 \end{frame}
