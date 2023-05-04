@@ -16,8 +16,15 @@
 	\end{enumerate}
 
 	\begin{solution}
+
+		Buscamos
+		\begin{equation*}
+			A=U\Sigma V^{\ast}.
+		\end{equation*}
+
 		Encontremos los autovalores de
 		\begin{equation*}
+			B=
 			A^{\ast}A=
 				{\begin{bmatrix}
 						1 & 0 \\
@@ -37,13 +44,67 @@
 				1 & 0 \\
 				1 & i \\
 				0 & i
-			\end{bmatrix}
+			\end{bmatrix}=
+			\begin{bmatrix}
+				2  & i \\
+				-i & 2
+			\end{bmatrix}.
+		\end{equation*}
+
+		Entonces, el polinomio característico de la matriz $A^{\ast}A$ es
+		\begin{equation*}
+			P_{A^{\ast}A}
+			\left(\lambda\right)=
+			\begin{vmatrix}
+				2  & i \\
+				-i & 2
+			\end{vmatrix}=
+			{\left(2-\lambda\right)}^{2}-\left(i\right)\left(-i\right)=
+				{\lambda}^{2}-4\lambda+3=
+			\left(\lambda-1\right)\left(\lambda-3\right).
+		\end{equation*}
+		Entonces, tenemos que $\lambda_{1}=3$ y $\lambda_{2}=1$.
+		Y así
+		\begin{equation*}
+			\Sigma=
+			\begin{bmatrix}
+				\lambda_{1} & 0           \\
+				0           & \lambda_{2} \\
+				0           & 0
+			\end{bmatrix}=
+			\begin{bmatrix}
+				3 & 0 \\
+				0 & 1 \\
+				0 & 0
+			\end{bmatrix}.
 		\end{equation*}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
 	\begin{solution}
-		.
+		\begin{equation*}
+			S\left(\lambda_{1}\right)=
+			\left\{
+			v\in\mathbb{C}^{2}\mid
+			Bv=\lambda_{1}v
+			\right\}=
+			\left\{
+			v\in\mathbb{C}^{2}\mid
+			t\left(i,1\right),t\in\mathbb{C}
+			\right\}.
+		\end{equation*}
+
+		\begin{equation*}
+			S\left(\lambda_{2}\right)=
+			\left\{
+			v\in\mathbb{C}^{2}\mid
+			Bv=\lambda_{1}v
+			\right\}=
+			\left\{
+			v\in\mathbb{C}^{2}\mid
+			t\left(-i,1\right),t\in\mathbb{C}
+			\right\}.
+		\end{equation*}
 	\end{solution}
 \end{frame}
