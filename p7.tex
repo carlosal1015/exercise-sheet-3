@@ -142,7 +142,76 @@
 \begin{frame}
     \begin{solution}
         \begin{enumerate}[d)]
-            \item Realizaremos la factorización $LDL^{t}mediante el uso de un algoritmo aplicado en python, el cu
+            \item Realizaremos la factorización $LDL^{t}$ mediante el uso de un algoritmo aplicado en python, el cual nos entregará las matrices $L$ y $D$.
+
+            Siendo el código:
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.7]{Codigo/LDL.png}
+                \caption{$LDL^{t}$}
+                \label{fig:LDL^{t}}
+            \end{figure}
         \end{enumerate}
     \end{solution}    
+\end{frame}
+\begin{frame}
+    \begin{solution}
+        \begin{enumerate}[d)]
+            \item Obtendremos las matrices:
+
+                \begin{equation*}
+                    L=
+                    \begin{pmatrix}
+                        1 & 0 \\
+                        -1.1 & 1
+                    \end{pmatrix}
+                    \qquad
+                    D=
+                    \begin{pmatrix}
+                        10 & 0 \\
+                        0 & 4.9
+                    \end{pmatrix}
+                \end{equation*}
+
+                Luego transformamos $A'x=b' \longrightarrow LDL^{t}x=b'$.
+
+                Y hacemos el siguiente artificio:
+
+                $(DL^{t})\cdot x=z \qquad \longrightarrow \qquad L\cdot z=b'$
+
+                Operamos para obtener la matriz $z$.
+
+                \begin{equation*}
+                    \begin{pmatrix}
+                        1 & 0 \\
+                        -1.1 & 1
+                    \end{pmatrix}
+                    \cdot
+                    \begin{pmatrix}
+                        z_{1} \\
+                        z_{2}
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        16632 \\
+                        -17276
+                    \end{pmatrix}
+                    \qquad
+                    \longrightarrow
+                    \qquad
+                    \begin{pmatrix}
+                        z_{1} \\
+                        z_{2}
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        16632 \\
+                        1019.2
+                    \end{pmatrix}
+                \end{equation*}
+
+                Realizaremos el siguiente artificio:
+                $L^{t}\cdot x=s \qquad \longrightarrow \qquad D\cdot s=z$
+        \end{enumerate}
+    \end{solution}
 \end{frame}
