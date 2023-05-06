@@ -343,18 +343,124 @@
 
     La matriz $\sum$ es una matriz cero con diagonales $\sigma$ diferentes de cero.\\
     \begin{math}
-            X=
+            \sum =
                 \begin{bmatrix} 
     			  5 & 0 & 0	   \\
-    				   \\
-    				
-    			\end{bmatrix} =
-                \begin{bmatrix} 
-    				-2  \\
-    				2   \\
-    				1
-    			\end{bmatrix} t \\
-         
+    			  0	& 3 & 0    
+    			\end{bmatrix}     
     \end{math}
+
+    Las columnas de la matriz V, son los vectores normalizados(unidades): \\
+    \begin{math}
+            V =
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{6} & -\frac{2}{3} \\
+    			  \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{6} & \frac{2}{3} \\
+                    0 & \frac{2\sqrt{2}}{3} & \frac{1}{3} \\
+    			\end{bmatrix}     \\
+            
+    \end{math} \\
+    Su transpuesta sería: \\
+    \begin{math}        
+            V^{T} =
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0 \\
+    			  \frac{\sqrt{2}}{6} & -\frac{\sqrt{2}}{6} & \frac{2\sqrt{2}}{3} \\
+                    -\frac{2}{3} & \frac{2}{3} & \frac{1}{3} \\
+    			\end{bmatrix}     \\
+            
+    \end{math} \\
+    Para la Matriz U , es formada por columnas $\mu$ cuyos autovalores sean diferentes de cero: \\
+    \begin{math}
+            \mu_{i} = \frac{1}{\sigma_{i}}.
+                \begin{bmatrix} 
+    			  3 & 2 & 2	   \\
+    			  2	& 3 & -2    
+    			\end{bmatrix} . v_{i} \\
+            \mu_{1} = \frac{1}{\sigma_{1}}.
+                \begin{bmatrix} 
+    			  3 & 2 & 2	   \\
+    			  2	& 3 & -2    
+    			\end{bmatrix} . v_{1} = 
+                \frac{1}{5}
+                \begin{bmatrix} 
+    			  3 & 2 & 2	   \\
+    			  2	& 3 & -2    
+    			\end{bmatrix} . 
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{2}  \\
+    			  \frac{\sqrt{2}}{2}	 \\
+                    0
+    			\end{bmatrix} = 
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{2}  \\
+    			  \frac{\sqrt{2}}{2}	
+    			\end{bmatrix} 
+
+            
+            
+    \end{math}
+
+    
+\end{frame}
+\begin{frame}
+    \begin{math}
+        \mu_{2} = \frac{1}{\sigma_{2}}.
+                \begin{bmatrix} 
+    			  3 & 2 & 2	   \\
+    			  2	& 3 & -2    
+    			\end{bmatrix} . v_{2} = 
+                \frac{1}{3}
+                \begin{bmatrix} 
+    			  3 & 2 & 2	   \\
+    			  2	& 3 & -2    
+    			\end{bmatrix} . 
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{6}  \\
+    			  -\frac{\sqrt{2}}{6}	 \\
+                    \frac{2\sqrt{2}}{3}
+    			\end{bmatrix} = 
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{2}  \\
+    			  -\frac{\sqrt{2}}{2}	
+    			\end{bmatrix} 
+    \end{math} \\
+    
+    Entonces tenemos que la matriz U es:\\
+    
+    \begin{math}
+    
+            U = 
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{2} &   \frac{\sqrt{2}}{2}\\
+    			  \frac{\sqrt{2}}{2} &	  -\frac{\sqrt{2}}{2}
+    			\end{bmatrix} 
+            
+    \end{math} \\
+
+    Entonces ya tendríamos la descomposición SVD: \\
+
+    $A = U. \sum . V^{T}$ \\
+
+    \begin{math}
+                \begin{bmatrix}
+				    3 & 2 & 2  \\
+				    2 & 3 & -2
+			    \end{bmatrix}=
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{2} &   \frac{\sqrt{2}}{2}\\
+    			  \frac{\sqrt{2}}{2} &	  -\frac{\sqrt{2}}{2}
+    			\end{bmatrix} .
+                \begin{bmatrix} 
+    			  5 & 0 & 0	   \\
+    			  0	& 3 & 0    
+    			\end{bmatrix} .
+                \begin{bmatrix} 
+    			  \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0 \\
+    			  \frac{\sqrt{2}}{6} & -\frac{\sqrt{2}}{6} & \frac{2\sqrt{2}}{3} \\
+                    -\frac{2}{3} & \frac{2}{3} & \frac{1}{3} \\
+    			\end{bmatrix}  
+            
+    \end{math} \\
     
 \end{frame}
