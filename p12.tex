@@ -19,209 +19,297 @@
 			            Modele el sistema.
 
 			      \item
-			            Resuelve el sistema usando el método de Parlet y Reid.
+			            Resuelve el sistema usando el método de Parlett-Reid.
 		      \end{enumerate}
 
 	\end{enumerate}
 
 	\begin{solution}
-		Sean $x$ el precio del helado, $y$ el precio del zumo, $z$ el
-		precio del batido.
-		\begin{align*}
-			1x+2y+4z=35 \\
-			4x+4y+1z=34 \\
-			2x+3y+4z=42 \\
-		\end{align*}
-		\begin{align*}
-			\begin{pmatrix}
-				1 & 2 & 4 \\
-				4 & 4 & 1 \\
-				2 & 3 & 4
-			\end{pmatrix} .
-			\begin{pmatrix}
-				x \\ y \\ z
-			\end{pmatrix} =
-			\begin{pmatrix}
-				35 \\
-				34 \\
-				42
-			\end{pmatrix}
-		\end{align*}
-		La matriz no es simétrica, por lo que no se puede aplicar la
-		descomposición Parleit Reidd.
-		Realizamos el intercambio de filas para que la matriz sea
+		\begin{enumerate}[a)]
+			\item
+
+			      Sean $x$ el precio del helado, $y$ el precio del zumo y $z$ el
+			      precio del batido.
+			      Entonces, resulta el siguiente sistema lineal
+
+			      \begin{equation*}
+				      \systeme{
+					      x+2y+4z=35,
+					      4x+4y+z=34,
+					      2x+3y+4z=42
+				      }
+			      \end{equation*}
+			\item
+
+			      En notación matricial $Ax=b$,
+			      \begin{align*}
+				      \underbrace{
+					      \begin{bmatrix}
+						      1 & 2 & 4 \\
+						      4 & 4 & 1 \\
+						      2 & 3 & 4
+					      \end{bmatrix}
+				      }_{A}
+				      \underbrace{
+					      \begin{bmatrix}
+						      x \\
+						      y \\
+						      z
+					      \end{bmatrix}
+				      }_{x}=
+				      \underbrace{
+					      \begin{bmatrix}
+						      35 \\
+						      34 \\
+						      42
+					      \end{bmatrix}
+				      }_{b}
+			      \end{align*}.
+
+		\end{enumerate}
+		Pero \alert{$A$ no es simétrica}, por lo que no se puede aplicar
+		la descomposición Parlett-Reid.
+		Así que realizamos el intercambio de filas para que la matriz sea
 		simétrica.
 	\end{solution}
 \end{frame}
 
 \begin{frame}
 	\begin{solution}
-		\begin{align*}
-			\begin{pmatrix}
-				1 & 2 & 4 \\
-				2 & 3 & 4 \\
-				4 & 4 & 1
-			\end{pmatrix} .
-			\begin{pmatrix}
-				x \\
-				y \\
-				z
-			\end{pmatrix} =
-			\begin{pmatrix}
-				35 \\
-				42 \\
-				34
-			\end{pmatrix}
-		\end{align*}
-		La descomposición Parlett Reidd tiene que tener la forma
-		$PAP^{T}=LTL^{T}$, lo cual nos llevara $n-2$ pasos.
+		\begin{enumerate}[b)]
+			\item
 
-		La matriz es símetrica e indefinida, por que sus autovalores
-		son negativos y positivos.
-		Ahora realizaremos las iteraciones:
+			      \begin{align*}
+				      \begin{bmatrix}
+					      1 & 2 & 4 \\
+					      2 & 3 & 4 \\
+					      4 & 4 & 1
+				      \end{bmatrix}
+				      \begin{bmatrix}
+					      x \\
+					      y \\
+					      z
+				      \end{bmatrix} =
+				      \begin{bmatrix}
+					      35 \\
+					      42 \\
+					      34
+				      \end{bmatrix}.
+			      \end{align*}
 
-		k=1:
-		\begin{equation*}
-			A =
-			\begin{bmatrix}
-				1 & 2 & 4 \\
-				2 & 3 & 4 \\
-				4 & 4 & 1
-			\end{bmatrix}
-		\end{equation*}
-		Buscamos el elemento del vector
-		\begin{math}
-			\begin{bmatrix}
-				a_{21} & a_{31}
-			\end{bmatrix}
-		\end{math}
-		de mayor valor absoluto y se determina una permutación, que
-		representaremos por
-		\begin{math}
-			\widetilde{P_{2}}
-		\end{math}, tal que:
-		\begin{equation*}
-			\widetilde{{P}_{1}}
-			\begin{bmatrix}
-				a_{21} \\
-				a_{31}
-			\end{bmatrix}=
-			\begin{bmatrix}
-				\widehat{a}_{2} \\
-				\widehat{a}_{3}
-			\end{bmatrix},
-		\end{equation*}
-		donde
-		\begin{math}
-			\left|\widehat{a_{2}}\right|=
-			\max\left[
-				\left|\widehat{a_{21}}\right|,
-				\left|\widehat{a_{31}}\right|
-				\right]
-		\end{math}.
+			      La descomposición Parlett-Reid es de la forma
+			      $PAP^{T}=LTL^{T}$, lo cual nos llevara $n-2$ pasos.
+
+			      Ahora, $A$ es simétrica e indefinida porque tiene al menos un autovalor
+			      negativo y positivo.
+			      Ahora realizaremos las iteraciones:
+			      \begin{description}
+				      \item[Etapa $k=1$]
+
+					      \begin{equation*}
+						      A =
+						      \begin{bmatrix}
+							      1         & 2 & 4 \\
+							      \alert{2} & 3 & 4 \\
+							      \alert{4} & 4 & 1
+						      \end{bmatrix}
+					      \end{equation*}
+
+					      Buscamos el elemento del vector
+					      \begin{math}
+						      \begin{bmatrix}
+							      a_{21} & a_{31}
+						      \end{bmatrix}
+					      \end{math}
+					      de mayor valor absoluto y se determina una permutación, que
+					      representaremos por
+					      \begin{math}
+						      P_{1}
+					      \end{math}, tal que:
+					      \begin{equation*}
+						      {P}_{1}
+						      \begin{bmatrix}
+							      a_{21} \\
+							      a_{31}
+						      \end{bmatrix}=
+						      \begin{bmatrix}
+							      \widehat{a}_{2} \\
+							      \widehat{a}_{3}
+						      \end{bmatrix},
+					      \end{equation*}
+					      donde
+					      \begin{math}
+						      \left|\widehat{a_{2}}\right|=
+						      \max\left\{
+						      \left|\widehat{a_{21}}\right|,
+						      \left|\widehat{a_{31}}\right|
+						      \right\}
+					      \end{math}.
+			      \end{description}
+		\end{enumerate}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
 	\begin{solution}
-		Donde:
-		\begin{equation*}
-			\alpha_{1}=
-			\begin{bmatrix}
-				0 \\
-				0 \\
-				\frac{\widehat{a_{3}}}{\widehat{a_{2}}}
-			\end{bmatrix},\quad
-			P_{1}=
-			\begin{bmatrix}
-				e_{1} & e_{3} & e_{2}
-			\end{bmatrix}\quad
-			M_{1}=
-			I_{3}-\alpha_{1}e_{2}=
-			I_{3}-
-			\begin{bmatrix}
-				0 \\
-				0 \\
-				\frac{2}{4}
-			\end{bmatrix}
-			\begin{bmatrix}
-				0 & 1 & 0
-			\end{bmatrix},\quad
-			P_{1}=
-			\begin{pmatrix}
-				1 & 0 & 0 \\
-				0 & 0 & 1 \\
-				0 & 1 & 0
-			\end{pmatrix}
-			A^{\left(1\right)}=
-            M_{1}
-            P_{1}
-            A
-            P_{1}^{T}
-            M_1^{T}=
-            \begin{bmatrix}
-				1 & 4   & 0    \\
-				4 & 1   & 7/2  \\
-				0 & 7/2 & -3/4
-			\end{bmatrix}
-		\end{equation*}
-		Ya tenemos la matriz tridiagonal, se cumplieron los $n-2$ pasos.
+		\begin{enumerate}[b)]
+			\item
+
+			      Donde
+			      \begin{math}
+				      \alpha_{1}=
+				      \begin{bmatrix}
+					      0 \\
+					      0 \\
+					      \dfrac{\widehat{a_{3}}}{\widehat{a_{2}}}
+				      \end{bmatrix}
+			      \end{math},
+			      \begin{math}
+				      P_{1}=
+				      \begin{bmatrix}
+					      e_{1} & e_{3} & e_{2}
+				      \end{bmatrix}=
+				      \begin{bmatrix}
+					      1 & 0 & 0 \\
+					      0 & 0 & 1 \\
+					      0 & 1 & 0
+				      \end{bmatrix}
+			      \end{math}.
+			      Entonces
+			      \begin{align*}
+				      M_{1}              & =
+				      I_{3}-\alpha_{1}e_{2}=
+				      \begin{bmatrix}
+					      1 & 0 & 0 \\
+					      0 & 1 & 0 \\
+					      0 & 0 & 1
+				      \end{bmatrix}-
+				      \begin{bmatrix}
+					      0 \\
+					      0 \\
+					      \frac{2}{4}
+				      \end{bmatrix}
+				      \begin{bmatrix}
+					      0 & 1 & 0
+				      \end{bmatrix}         \\
+				      A^{\left(1\right)} & =
+				      M_{1}
+				      P_{1}
+				      A
+				      P_{1}^{T}
+				      M_{1}^{T}=
+				      \begin{bmatrix}
+					      1 & 4   & 0    \\
+					      4 & 1   & 7/2  \\
+					      0 & 7/2 & -3/4
+				      \end{bmatrix}=T.
+			      \end{align*}
+			      Ya tenemos la matriz tridiagonal, se cumplieron los $n-2$ pasos.
+			      Por lo tanto,
+			      \begin{equation*}
+				      P=P_{n-2}\cdots P_{1}=
+				      \begin{bmatrix}
+					      1 & 0 & 0 \\
+					      0 & 0 & 1 \\
+					      0 & 1 & 0
+				      \end{bmatrix},\quad
+				      L=
+				      {\left(M_{1}P_{1}P^{T}\right)}^{-1}=
+				      \begin{bmatrix}
+					      1 & 0   & 0 \\
+					      0 & 1   & 0 \\
+					      0 & 1/2 & 1
+				      \end{bmatrix}.
+			      \end{equation*}
+		\end{enumerate}
 	\end{solution}
-
 \end{frame}
 
-\begin{frame}{Continuación}
-	\begin{align*}
-		P = P_1 = \begin{pmatrix}
-			          1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0
-		          \end{pmatrix} \\
-		T =  M_1 A P_1 ^ {T} M_1 ^ {T}  = \begin{pmatrix}
-			                                  1 & 4 & 0 \\ 4 & 1 & 3.5 \\ 0 & 3.5 & -0.75
-		                                  \end{pmatrix}
-		\\
-		L = (M_1 P_1 P^T ) ^{-1}  = \begin{pmatrix}
-			                            1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1/2 & 1
-		                            \end{pmatrix}
-		\\
-		\begin{bmatrix}
-			x & y & z
-		\end{bmatrix} =
-		\begin{bmatrix}
-			3 & 4 & 6
-		\end{bmatrix}
-		\\
-	\end{align*}
+\begin{frame}
+	\begin{enumerate}[b)]
+		\item
 
+		      Mediante la factorización, resolvemos $Ax=b$ en las siguientes etapas:
 
+		      \begin{itemize}
+			      \item
 
-\end{frame}
+			            \begin{math}
+				            Lz=
+				            Pb
+			            \end{math}.
+			      \item
 
-\begin{frame}{}
-	Mediante una factorización , como esta la resolución $Ax=b$ constaria de las siguientes etapas.
-	\begin{enumerate}
-		\item L $z$ = P. b
-		\item   T W = z (Se resuelve por Thomas)
-		\item L$^T$ y = W
-		\item x = P$^{T}$y
+			            \begin{math}
+				            TW=
+				            z
+			            \end{math}.
+			            (Las matrices tridiagonales se resuelven por el algoritmo Thomas).
+			      \item
 
+			            \begin{math}
+				            L^{T}y=
+				            W
+			            \end{math}
+
+			      \item
+
+			            \begin{math}
+				            x=
+				            P^{T}y
+			            \end{math}.
+		      \end{itemize}
 	\end{enumerate}
 
 	\begin{align*}
-		z = \begin{bmatrix}
-			    35 & -106 & 0.2666
-		    \end{bmatrix} \\
-		w = \begin{bmatrix}
-			    3 & 8 & 4
-		    \end{bmatrix}     \\
-		y = \begin{bmatrix}
-			    3 & 6 & 4
-		    \end{bmatrix}
+		z=
+		\begin{bmatrix}
+			35 & -106 & 0.2666
+		\end{bmatrix},\quad
+		w=
+		\begin{bmatrix}
+			3 & 8 & 4
+		\end{bmatrix},\quad
+		y=\begin{bmatrix}
+			  3 & 6 & 4
+		  \end{bmatrix}.
 	\end{align*}
-	Estos valores estan determinados por el código python adjunto , el cual mediante la resolución de matrices y sustitución se llega a la resolución de [x,y,z]
-
-	Donde los precios son :
+	Estos resultados están calculados en el siguiente programa, mediante
+	la resolución de matrices y sustitución para obtener $\left[x,y,z\right]$.
+	Finalmente, los precios son:
 	\begin{align*}
-		x :  helado = 3 \\ y :  zumo  = 4 \\ z : batido = 6
+		x:\text{precio del helado} & = 3 \\
+		y:\text{precio del zumo}   & = 4 \\
+		z:\text{precio del batido} & = 6
 	\end{align*}
-
 \end{frame}
+
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=.5\paperwidth]{p12.png}
+	\end{center}
+\end{frame}
+
+% \begin{frame}[fragile]
+% 	\begin{columns}
+% 		\begin{column}{0.48\textwidth}
+% 			\inputminted[fontsize=\tiny,firstline=80,lastline=107]{python}{p12.py}
+% 		\end{column}
+% 		\begin{column}{0.48\textwidth}
+% 			\inputminted[fontsize=\tiny,firstline=108,lastline=125]{python}{p12.py}
+% 			\inputminted[fontsize=\tiny,firstline=127,lastline=131]{python}{p12.py}
+% 		\end{column}
+% 	\end{columns}
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\begin{columns}
+% 		\begin{column}{0.48\textwidth}
+% 			\inputminted[fontsize=\tiny,firstline=80,lastline=107]{python}{p12.py}
+% 			\inputminted[fontsize=\tiny,firstline=134,lastline=141]{python}{p12.py}
+% 		\end{column}
+% 		\begin{column}{0.48\textwidth}
+% 			\inputminted[fontsize=\tiny,firstline=143,lastline=150]{python}{p12.py}
+% 		\end{column}
+% 	\end{columns}
+% \end{frame}
