@@ -1,4 +1,4 @@
-\section{Pregunta N$^{\circ}$12\qquad Nombre}
+\section{Pregunta N$^{\circ}$12\qquad Carlos Daniel Malvaceda Canales}
 
 \begin{frame}
 	\begin{enumerate}\setcounter{enumi}{11}
@@ -24,12 +24,154 @@
 	\end{enumerate}
 
 	\begin{solution}
-		.
+		 x : precio del helado , y : precio del zumo , z : precio del batido 
+        \begin{align*}
+            1x+2y+4z=35 \\
+            4x+4y+1z=34 \\ 
+            2x+3y+4z=42 \\
+        \end{align*}
+         \begin{align*}
+            \begin{pmatrix}
+            1 & 2 & 4 \\
+            4 & 4 & 1 \\
+            2 & 3 & 4 
+            \end{pmatrix} .
+            \begin{pmatrix}
+                x \\ y \\ z
+            \end{pmatrix} = 
+            \begin{pmatrix}
+                35 \\ 34 \\ 42
+            \end{pmatrix}
+         \end{align*}
+         La matriz no es simétrica , por lo que no se puede aplicar la descomposición Parleit Reidd.
+         Realizamos el intercambio de filas para que la matriz sea simetrica.
+        
 	\end{solution}
 \end{frame}
 
 \begin{frame}
 	\begin{solution}
-		.
+		\begin{align*}
+            \begin{pmatrix}
+            1 & 2 & 4 \\
+            2 & 3 & 4 \\
+            4 & 4 & 1 
+            \end{pmatrix} .
+            \begin{pmatrix}
+                x \\ y \\ z
+            \end{pmatrix} = 
+            \begin{pmatrix}
+                35 \\ 42 \\ 34
+            \end{pmatrix}
+         \end{align*}
+        
+         La descomposición Parlett Reidd tiene que tener la forma $ PAP^{T} = LTL^{T} $ , lo cual nos llevara $n-2$ pasos. \\ 
+         La matriz es símetrica e indefinida , por que sus autovalores son negativos y positivos. Ahora realizaremos las iteraciones :
+
+        k = 1 : 
+    \begin{equation*}
+        A = 
+        \begin{bmatrix}
+        1 & 2 & 4 \\
+            2 & 3 & 4 \\
+            4 & 4 & 1 
+        
+        \end{bmatrix}
+    \end{equation*}
+    Buscamos el elemento del vector \( [a_{21},a_{31}] \)
+    de mayor valor absoluto y se determina una permutación, que representaremos por \(\tilde{P}_{2}\) , tal que :
+    \[ \tilde{P}_{1} \begin{bmatrix}
+        a_{21} \\ a_{31}
+        \end{bmatrix} = \begin{bmatrix}
+        \hat{a}_{2} \\ \hat{a}_{3}
+        \end{bmatrix} , donde |\hat{a} |_{2} = max [|\hat{a}_{21}| , |\hat{a}_{31}| ] \]
+        
 	\end{solution}
+\end{frame}
+
+\begin{frame}{}
+    \begin{solution}
+    Donde : \\
+        \begin{center}
+            \alpha_1 = \begin{bmatrix}
+            0 \\ 0 \\ \hat{a}_{3} / \hat{a}_{2}
+            \end{bmatrix} , P_1 = [e_1,e_3,e_2] \\
+     M_1 = I_3 - \alpha_1 e_2 = I_3 - \begin{bmatrix}
+            0 \\ 0 \\ 2/4
+            \end{bmatrix} \begin{bmatrix}
+            0 & 1 & 0 
+            \end{bmatrix} \\ 
+        P_1 = \begin{pmatrix}
+            1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0
+
+        \end{pmatrix}   
+            
+        A^{(1)} = M_1 P_1 A P_1^{T} M_1^{T} = \begin{bmatrix}
+        1 & 4 & 0 \\ 
+        4 & 1 & 7/2 \\
+        0 & 7/2 & -3/4
+        \end{bmatrix}
+       
+        \end{center}
+
+         Ya tenemos la matriz tridiagonal , se cumplieron los n-2 pasos.
+       
+    \end{solution}
+    
+\end{frame}
+
+\begin{frame}{Continuación}
+        \begin{align*}
+            P = P_1 = \begin{pmatrix}
+                1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0
+            \end{pmatrix} \\
+            T =  M_1 A P_1 ^ {T} M_1 ^ {T}  = \begin{pmatrix}
+                1 & 4 & 0 \\ 4 & 1 & 3.5 \\ 0 & 3.5 & -0.75
+            \end{pmatrix}
+            \\
+            L = (M_1 P_1 P^T ) ^{-1}  = \begin{pmatrix}
+                1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1/2 & 1
+            \end{pmatrix}
+            \\
+            \begin{bmatrix}
+                x & y & z
+            \end{bmatrix} = 
+            \begin{bmatrix}
+                3 & 4 & 6
+            \end{bmatrix} 
+            \\ 
+        \end{align*}
+        
+        
+
+\end{frame}
+
+\begin{frame}{}
+    Mediante una factorización , como esta la resolución $Ax=b$ constaria de las siguientes etapas.
+    \begin{enumerate}
+        \item L $z$ = P. b
+        \item   T W = z (Se resuelve por Thomas)
+        \item L$^T$ y = W
+        \item x = P$^{T}$y
+        
+    \end{enumerate}
+    
+    \begin{align*}
+        z = \begin{bmatrix}
+            35 & -106 & 0.2666
+        \end{bmatrix} \\
+        w = \begin{bmatrix}
+            3 & 8 & 4
+        \end{bmatrix} \\ 
+        y = \begin{bmatrix}
+            3 & 6 & 4
+        \end{bmatrix}
+    \end{align*}
+    Estos valores estan determinados por el código python adjunto , el cual mediante la resolución de matrices y sustitución se llega a la resolución de [x,y,z]
+
+    Donde los precios son :
+\begin{align*}
+    x :  helado = 3 \\ y :  zumo  = 4 \\ z : batido = 6
+\end{align*}
+ 
 \end{frame}
