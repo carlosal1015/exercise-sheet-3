@@ -212,6 +212,8 @@
 
                 Realizaremos el siguiente artificio:
                 $L^{t}\cdot x=s \qquad \longrightarrow \qquad D\cdot s=z$
+                
+                Operamos para obtener la matriz $s$.
 
                 \begin{equation*}
                     \begin{pmatrix}
@@ -242,7 +244,140 @@
                     \end{pmatrix}
                 \end{equation*}
 
-                Ahora resolveremos $L^{t}$$
+                Ahora resolveremos $L^{t}\cdot x=s$.
+
+                \begin{equation*}
+                    \begin{pmatrix}
+                        1 & -1.1 \\
+                        0 & 1
+                    \end{pmatrix}
+                    \cdot
+                    \begin{pmatrix}
+                        x_{1} \\
+                        x_{2}
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        1663.2 \\
+                        208
+                    \end{pmatrix}
+                    \qquad
+                    \longrightarrow
+                    \qquad
+                    \begin{pmatrix}
+                        x_{1} \\
+                        x_{2}
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        1892 \\
+                        208
+                    \end{pmatrix}
+                \end{equation*}
+
+            Obteniendo así la solución del problema.
+                
+        \end{enumerate}
+    \end{solution}
+\end{frame}
+
+\begin{frame}
+    \begin{solution}
+        \begin{enumerate}[d)]
+            \item Realizaremos la factorización de Cholesky mediante el uso de un algoritmo aplicado en python, el cual nos entregará la matriz $L$.
+
+            Siendo el código:
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.8]{Codigo/Cholesky.png}
+                \caption{Cholesky}
+                \label{fig:Cholesky}
+            \end{figure}
+        \end{enumerate}
+    \end{solution}    
+\end{frame}
+\begin{frame}
+    \begin{solution}
+        \begin{enumerate}[d)]
+            \item Obtendremos la matriz:
+
+                \begin{equation*}
+                    L=
+                    \begin{pmatrix}
+                        3.16227766 & 0 \\
+                        -3.47850543 & 2.21359436
+                    \end{pmatrix}
+                \end{equation*}
+
+                Luego transformamos $A'x=b' \longrightarrow LL^{t}x=b'$.
+
+                Y hacemos el siguiente artificio:
+
+                $L^{t}\cdot x=z \qquad \longrightarrow \qquad L\cdot z=b'$
+
+                Operamos para obtener la matriz $z$.
+
+                \begin{equation*}
+                    \begin{pmatrix}
+                        3.16227766 & 0 \\
+                        -3.47850543 & 2.21359436
+                    \end{pmatrix}
+                    \cdot
+                    \begin{pmatrix}
+                        z_{1} \\
+                        z_{2}
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        16632 \\
+                        -17276
+                    \end{pmatrix}
+                    \qquad
+                    \longrightarrow
+                    \qquad
+                    \begin{pmatrix}
+                        z_{1} \\
+                        z_{2}
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        5259.5002 \\
+                        460.42763
+                    \end{pmatrix}
+                \end{equation*}
+
+                Ahora resolveremos $L^{t}\cdot x=z$.
+
+                \begin{equation*}
+                    \begin{pmatrix}
+                        3.16227766 & -3.47850543 \\
+                        0 & 2.21359436
+                    \end{pmatrix}
+                    \cdot
+                    \begin{pmatrix}
+                        x_{1} \\
+                        x_{2}
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        5259.5002 \\
+                        460.42763
+                    \end{pmatrix}
+                    \qquad
+                    \longrightarrow
+                    \qquad
+                    \begin{pmatrix}
+                        x_{1} \\
+                        x_{2}
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        1892 \\
+                        208
+                    \end{pmatrix}
+                \end{equation*}
+
+            Obteniendo así la solución del problema.
                 
         \end{enumerate}
     \end{solution}
