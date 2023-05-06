@@ -5,10 +5,6 @@
 		Si $A\in\mathbb{C}^{m\times n}$, entonces $A$ tiene una
 		descomposición de valores singulares.
 	\end{theorem}
-
-	\begin{proof}
-		.
-	\end{proof}
 \end{frame}
 
 \begin{frame}
@@ -127,10 +123,10 @@
 			\end{vmatrix} \\
 		\end{math}.
 
-		Ahora hallaremos el espacio nulo mediante la siguiente ecuación: \\
-       
+		Ahora hallaremos el espacio nulo mediante la siguiente ecuación:
+
 		\begin{equation*}
-			\begin{bmatrix} 
+			\begin{bmatrix}
 				1 & -1 & 0 \\
 				0 & 0  & 1 \\
 				0 & 0  & 0
@@ -141,198 +137,214 @@
 				x_{3}
 			\end{bmatrix}=
 			\begin{bmatrix}
-				0   \\
-				0   \\
+				0 \\
+				0 \\
 				0
 			\end{bmatrix}
 		\end{equation*}
 
-        Resolviendo obtenemos que el conjunto solución es: \\
-        $x_{1}=t \hspace{1cm}  x_{2}=t \hspace{1cm}  x_{3}=0$ \\
-        \begin{math}
-        Tenemos como conjunto solución: \\
-            X=
-            \begin{bmatrix} 
-				t   \\
-				t   \\
+		Resolviendo obtenemos que el conjunto solución es:
+		\begin{equation*}
+			x_{1}=t\quad
+			x_{2}=t\quad
+			x_{3}=0.
+		\end{equation*}
+		Tenemos como conjunto solución:
+
+		\begin{math}
+			X=
+			\begin{bmatrix}
+				t \\
+				t \\
 				0
 			\end{bmatrix} =
-            \begin{bmatrix} 
-				1   \\
-				1   \\
+			\begin{bmatrix}
+				1 \\
+				1 \\
 				0
-			\end{bmatrix} t \\
-     
-        \end{math}
+			\end{bmatrix}t
+		\end{math}
 
-         Entonces tenemos que el autovector para \hspace{0.2cm}$\lambda_{1}=25$ es: \\
-         $v_{1}=$
-            \begin{bmatrix} 
-				1   \\
-				1   \\
+		Entonces tenemos que el autovector para $\lambda_{1}=25$ es:
+
+		\begin{math}
+			v_{1}=
+			\begin{bmatrix}
+				1 \\
+				1 \\
 				0
-			\end{bmatrix} \\
-        
-		
-            
-			
+			\end{bmatrix}
+		\end{math}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
-    \begin{itemize}
-			\item
-			      Para $\lambda_{2}=9$,
-			      \begin{equation}
-				      P_{A^{T}A}
-				      \left(\lambda\right)=
-				      \begin{vmatrix}
-					      13 - \lambda_{2} & 12               & 2               \\
-					      12               & 13 - \lambda_{2} & -2              \\
-					      2                & -2               & 8 - \lambda_{2}
-				      \end{vmatrix} =
-				      \begin{vmatrix}
-					      4  & 12 & 2  \\
-					      12 & 4  & -2 \\
-					      2  & -2 & -1
-				      \end{vmatrix}.
-			      \end{equation}
-        Haciendo operaciones fila reducimos la matriz quedando:
+	\begin{itemize}
+		\item
+		      Para $\lambda_{2}=9$,
+		      \begin{equation}
+			      P_{A^{T}A}
+			      \left(\lambda\right)=
+			      \begin{vmatrix}
+				      13 - \lambda_{2} & 12               & 2               \\
+				      12               & 13 - \lambda_{2} & -2              \\
+				      2                & -2               & 8 - \lambda_{2}
+			      \end{vmatrix} =
+			      \begin{vmatrix}
+				      4  & 12 & 2  \\
+				      12 & 4  & -2 \\
+				      2  & -2 & -1
+			      \end{vmatrix}.
+		      \end{equation}
+		      Haciendo operaciones fila reducimos la matriz quedando:
 
-		\begin{math}
-			P_{A^{T}A}
-			\left(\lambda\right)=
-			\begin{vmatrix}
-				1 & 0  & -1/4 \\
-				0 & 1  & 1/4 \\
-				0 & 0  & 0
-			\end{vmatrix} \\
-		\end{math}.
+		      \begin{math}
+			      P_{A^{T}A}
+			      \left(\lambda\right)=
+			      \begin{vmatrix}
+				      1 & 0 & -1/4 \\
+				      0 & 1 & 1/4  \\
+				      0 & 0 & 0
+			      \end{vmatrix}
+		      \end{math}.
 
-		Ahora hallaremos el espacio nulo mediante la siguiente ecuación: \\
-       
-		\begin{equation*}
-			\begin{bmatrix} 
-				1 & 0  & -1/4 \\
-				0 & 1  & 1/4 \\
-				0 & 0  & 0
-			\end{bmatrix}
-			\begin{bmatrix}
-				x_{1} \\
-				x_{2} \\
-				x_{3}
-			\end{bmatrix}=
-			\begin{bmatrix}
-				0   \\
-				0   \\
-				0
-			\end{bmatrix}
-		\end{equation*}
+		      Ahora hallaremos el espacio nulo mediante la siguiente ecuación:
 
-        Resolviendo obtenemos que el conjunto solución es: \\
-        $x_{1}=t/4 \hspace{1cm}  x_{2}=-t/4 \hspace{1cm}  x_{3}=t$ \\
-        Tenemos como conjunto solución: \\
-            \begin{math}
-            X=
-                \begin{bmatrix} 
-    				t/4   \\
-    				-t/4   \\
-    				t
-    			\end{bmatrix} =
-                \begin{bmatrix} 
-    				1/4   \\
-    				-1/4   \\
-    				1
-    			\end{bmatrix} t \\
-         
-            \end{math}
-    
-         Entonces tenemos que el autovector para \hspace{0.2cm}$\lambda_{1}=25$ es: \\
-         $v_{1}=$
-            \begin{bmatrix} 
-				1/4   \\
-				-1/4   \\
-				1
-			\end{bmatrix} \\
-    
-		\end{itemize}
+		      \begin{equation*}
+			      \begin{bmatrix}
+				      1 & 0 & -1/4 \\
+				      0 & 1 & 1/4  \\
+				      0 & 0 & 0
+			      \end{bmatrix}
+			      \begin{bmatrix}
+				      x_{1} \\
+				      x_{2} \\
+				      x_{3}
+			      \end{bmatrix}=
+			      \begin{bmatrix}
+				      0 \\
+				      0 \\
+				      0
+			      \end{bmatrix}
+		      \end{equation*}
+
+		      Resolviendo obtenemos que el conjunto solución es:
+
+		      \begin{math}
+			      x_{1}=\frac{t}{4}\quad
+			      x_{2}=-\frac{t}{4}\quad
+			      x_{3}=t
+		      \end{math}
+		      Tenemos como conjunto solución:
+
+		      \begin{math}
+			      X=
+			      \begin{bmatrix}
+				      t/4  \\
+				      -t/4 \\
+				      t
+			      \end{bmatrix} =
+			      \begin{bmatrix}
+				      1/4  \\
+				      -1/4 \\
+				      1
+			      \end{bmatrix}t
+		      \end{math}
+
+		      Entonces tenemos que el autovector para $\lambda_{1}=25$ es:
+		      \begin{math}
+			      v_{1}=
+			      \begin{bmatrix}
+				      1/4  \\
+				      -1/4 \\
+				      1
+			      \end{bmatrix}
+		      \end{math}
+	\end{itemize}
 \end{frame}
+
 \begin{frame}
-    \begin{itemize}
-			\item
-			      Para $\lambda_{3}=0$,
-			      \begin{equation}
-				      P_{A^{T}A}
-				      \left(\lambda\right)=
-				      \begin{vmatrix}
-					      13 - \lambda_{3} & 12               & 2               \\
-					      12               & 13 - \lambda_{3} & -2              \\
-					      2                & -2               & 8 - \lambda_{3}
-				      \end{vmatrix} =
-				      \begin{vmatrix}
-					      13 & 12 & 2  \\
-					      12 & 13 & -2 \\
-					      2  & -2 & 8
-				      \end{vmatrix}.
-			      \end{equation}
-        Haciendo operaciones fila reducimos la matriz quedando:
+	\begin{itemize}
+		\item
+		      Para $\lambda_{3}=0$,
+		      \begin{equation}
+			      P_{A^{T}A}
+			      \left(\lambda\right)=
+			      \begin{vmatrix}
+				      13 - \lambda_{3} & 12               & 2               \\
+				      12               & 13 - \lambda_{3} & -2              \\
+				      2                & -2               & 8 - \lambda_{3}
+			      \end{vmatrix} =
+			      \begin{vmatrix}
+				      13 & 12 & 2  \\
+				      12 & 13 & -2 \\
+				      2  & -2 & 8
+			      \end{vmatrix}.
+		      \end{equation}
+		      Haciendo operaciones fila reducimos la matriz quedando:
 
-		\begin{math}
-			P_{A^{T}A}
-			\left(\lambda\right)=
-			\begin{vmatrix}
-				1 & 0  & 2 \\
-				0 & 1  & -2 \\
-				0 & 0  & 0
-			\end{vmatrix} \\
-		\end{math}.
+		      \begin{math}
+			      P_{A^{T}A}
+			      \left(\lambda\right)=
+			      \begin{vmatrix}
+				      1 & 0 & 2  \\
+				      0 & 1 & -2 \\
+				      0 & 0 & 0
+			      \end{vmatrix}
+		      \end{math}.
 
-		Ahora hallaremos el espacio nulo mediante la siguiente ecuación: \\
-       
-		\begin{equation*}
-			\begin{bmatrix} 
-				1 & 0  & 2 \\
-				0 & 1  & -2 \\
-				0 & 0  & 0
-			\end{bmatrix}
-			\begin{bmatrix}
-				x_{1} \\
-				x_{2} \\
-				x_{3}
-			\end{bmatrix}=
-			\begin{bmatrix}
-				0   \\
-				0   \\
-				0
-			\end{bmatrix}
-		\end{equation*}
+		      Ahora hallaremos el espacio nulo mediante la siguiente ecuación:
 
-        Resolviendo obtenemos que el conjunto solución es: \\
-        $x_{1}=-2t \hspace{1cm}  x_{2}=2t \hspace{1cm}  x_{3}=t$ \\
-        Tenemos como conjunto solución: \\
-            \begin{math}
-            X=
-                \begin{bmatrix} 
-    				-2t   \\
-    				2t   \\
-    				t
-    			\end{bmatrix} =
-                \begin{bmatrix} 
-    				-2  \\
-    				2   \\
-    				1
-    			\end{bmatrix} t \\
-         
-            \end{math}
-    
-         Entonces tenemos que el autovector para \hspace{0.2cm}$\lambda_{1}=25$ es: \\
-         $v_{1}=$
-            \begin{bmatrix} 
-				1/4   \\
-				-1/4   \\
-				1
-			\end{bmatrix} \\
-    
-		\end{itemize}
-    
-\end{frame}   
+		      \begin{equation*}
+			      \begin{bmatrix}
+				      1 & 0 & 2  \\
+				      0 & 1 & -2 \\
+				      0 & 0 & 0
+			      \end{bmatrix}
+			      \begin{bmatrix}
+				      x_{1} \\
+				      x_{2} \\
+				      x_{3}
+			      \end{bmatrix}=
+			      \begin{bmatrix}
+				      0 \\
+				      0 \\
+				      0
+			      \end{bmatrix}
+		      \end{equation*}
+
+		      Resolviendo obtenemos que el conjunto solución es:
+
+		      \begin{math}
+			      x_{1}=-2t\quad
+			      x_{2}=2t\quad
+			      x_{3}=t
+		      \end{math}
+		      Tenemos como conjunto solución:
+
+		      \begin{math}
+			      X=
+			      \begin{bmatrix}
+				      -2t \\
+				      2t  \\
+				      t
+			      \end{bmatrix} =
+			      \begin{bmatrix}
+				      -2 \\
+				      2  \\
+				      1
+			      \end{bmatrix}t
+		      \end{math}
+
+		      Entonces tenemos que el autovector para $\lambda_{1}=25$ es:
+
+		      \begin{math}
+			      v_{1}=
+			      \begin{bmatrix}
+				      \frac{1}{4}  \\
+				      -\frac{1}{4} \\
+				      1
+			      \end{bmatrix}
+		      \end{math}
+	\end{itemize}
+\end{frame}

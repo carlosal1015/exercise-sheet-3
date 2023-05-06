@@ -33,217 +33,217 @@
 	\end{enumerate}
 
 	\begin{solution}
-		  \begin{enumerate}[a)]
-			      \item
-			            Modele el problema.
+		\begin{enumerate}[a)]
+			\item
+			      Modele el problema.
 
-                        $x_{1}$:bombillas buenas \qquad $x_{2}$:bombillas defectuosas
-                        
-                        \begin{align*}      
-                        
-                            x_{1}+x_{2}=2100 \qquad\qquad\quad \longrightarrow \qquad x_{1}+x_{2}=2100
+			      $x_{1}$:bombillas buenas \qquad $x_{2}$:bombillas defectuosas
 
-                        0.3x_{1}-0.4x_{2}=484.4\qquad \longrightarrow \qquad 3x_{1}+4x_{2}=4844
-                        \end{align*}
-                        \begin{equation*}
-                            \underbrace{\begin{pmatrix}
-                                1 & 1\\
-                                3 & -4
-                            \end{pmatrix}}_{A}
-                            \underbrace{\begin{pmatrix}
-                                x_{1}\\
-                                x_{2}
-                            \end{pmatrix}}_{x}
-                            =
-                            \underbrace{\begin{pmatrix}
-                                2100\\
-                                4844
-                            \end{pmatrix}}_{b}
-                        \end{equation*}
+			      \begin{align*}
 
-                    \item
-			            Determine la norma matricial de $A$.
+				      x_{1}+x_{2}=2100 \qquad\qquad\quad \longrightarrow \qquad x_{1}+x_{2}=2100
 
-                        $\|A\|_{\infty}=max\{2;7\}=7$
-            \end{enumerate}
+				      0.3x_{1}-0.4x_{2}=484.4\qquad \longrightarrow \qquad 3x_{1}+4x_{2}=4844
+			      \end{align*}
+			      \begin{equation*}
+				      \underbrace{\begin{pmatrix}
+						      1 & 1  \\
+						      3 & -4
+					      \end{pmatrix}}_{A}
+				      \underbrace{\begin{pmatrix}
+						      x_{1} \\
+						      x_{2}
+					      \end{pmatrix}}_{x}
+				      =
+				      \underbrace{\begin{pmatrix}
+						      2100 \\
+						      4844
+					      \end{pmatrix}}_{b}
+			      \end{equation*}
+
+			\item
+			      Determine la norma matricial de $A$.
+
+			      $\|A\|_{\infty}=max\{2;7\}=7$
+		\end{enumerate}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
 	\begin{solution}
-		  \begin{enumerate}[c)]
-		    \item 
-                    Determine el número de condicionamiento de $A$.
+		\begin{enumerate}[c)]
+			\item
+			      Determine el número de condicionamiento de $A$.
 
-                    Calculamos la inversa de A:
+			      Calculamos la inversa de A:
 
-                    \begin{equation*}
-                            A^{-1}=
-                            \begin{pmatrix}
-                                \frac{4}{7} & \frac{1}{7}\\
-                                \frac{3}{7} & -\frac{1}{7}
-                            \end{pmatrix}
-                    \end{equation*}
-                    $\|A^{-1}\|_{\infty}=max\{\frac{5}{7};\frac{4}{7}\}=\frac{5}{7}$
+			      \begin{equation*}
+				      A^{-1}=
+				      \begin{pmatrix}
+					      \frac{4}{7} & \frac{1}{7}  \\
+					      \frac{3}{7} & -\frac{1}{7}
+				      \end{pmatrix}
+			      \end{equation*}
+			      $\|A^{-1}\|_{\infty}=max\{\frac{5}{7};\frac{4}{7}\}=\frac{5}{7}$
 
-                    $Cond(A)=\|A\|\cdot\|A^{-1}\|=7\times \frac{5}{7}=5$               
-		  \end{enumerate}
-            \begin{enumerate}[d)]
-                \item 
-                    Resolver usando el método de Factorización
-			            $LDL^{T}$ y Cholesky.
+			      $Cond(A)=\|A\|\cdot\|A^{-1}\|=7\times \frac{5}{7}=5$
+		\end{enumerate}
+		\begin{enumerate}[d)]
+			\item
+			      Resolver usando el método de Factorización
+			      $LDL^{T}$ y Cholesky.
 
-                    Dado que la matriz A no es simétrica, realizaremos una operación para que lo sea.
+			      Dado que la matriz A no es simétrica, realizaremos una operación para que lo sea.
 
-                    \begin{equation*}
-                            \underbrace{\begin{pmatrix}
-                                1 & 3\\
-                                1 & -4
-                            \end{pmatrix}}_{A^t}
-                            \cdot
-                            \underbrace{\begin{pmatrix}
-                                1 & 1\\
-                                3 & -4
-                            \end{pmatrix}}_{A}
-                            \underbrace{\begin{pmatrix}
-                                x_{1}\\
-                                x_{2}
-                            \end{pmatrix}}_{x}
-                            =\underbrace{\begin{pmatrix}
-                                1 & 3\\
-                                1 & -4
-                            \end{pmatrix}}_{A^t}
-                            \cdot
-                            \underbrace{\begin{pmatrix}
-                                2100\\
-                                4844
-                            \end{pmatrix}}_{b}
-                        \end{equation*}
-                        
-                        \begin{equation*}
-                            \underbrace{\begin{pmatrix}
-                                10 & -11\\
-                                -11 & 17
-                            \end{pmatrix}}_{A'}
-                            \underbrace{\begin{pmatrix}
-                                x_{1}\\
-                                x_{2}
-                            \end{pmatrix}}_{x}
-                            =
-                            \underbrace{\begin{pmatrix}
-                                16632\\
-                                -17276
-                            \end{pmatrix}}_{b'}
-                        \end{equation*}
-                    
-            \end{enumerate}
+			      \begin{equation*}
+				      \underbrace{\begin{pmatrix}
+						      1 & 3  \\
+						      1 & -4
+					      \end{pmatrix}}_{A^t}
+				      \cdot
+				      \underbrace{\begin{pmatrix}
+						      1 & 1  \\
+						      3 & -4
+					      \end{pmatrix}}_{A}
+				      \underbrace{\begin{pmatrix}
+						      x_{1} \\
+						      x_{2}
+					      \end{pmatrix}}_{x}
+				      =\underbrace{\begin{pmatrix}
+						      1 & 3  \\
+						      1 & -4
+					      \end{pmatrix}}_{A^t}
+				      \cdot
+				      \underbrace{\begin{pmatrix}
+						      2100 \\
+						      4844
+					      \end{pmatrix}}_{b}
+			      \end{equation*}
+
+			      \begin{equation*}
+				      \underbrace{\begin{pmatrix}
+						      10  & -11 \\
+						      -11 & 17
+					      \end{pmatrix}}_{A'}
+				      \underbrace{\begin{pmatrix}
+						      x_{1} \\
+						      x_{2}
+					      \end{pmatrix}}_{x}
+				      =
+				      \underbrace{\begin{pmatrix}
+						      16632 \\
+						      -17276
+					      \end{pmatrix}}_{b'}
+			      \end{equation*}
+
+		\end{enumerate}
 	\end{solution}
 \end{frame}
 \begin{frame}
-    \begin{solution}
-        \begin{enumerate}[d)]
-            \item Realizaremos la factorización $LDL^{t}$ mediante el uso de un algoritmo aplicado en python, el cual nos entregará las matrices $L$ y $D$.
+	\begin{solution}
+		\begin{enumerate}[d)]
+			\item Realizaremos la factorización $LDL^{t}$ mediante el uso de un algoritmo aplicado en python, el cual nos entregará las matrices $L$ y $D$.
 
-            Siendo el código:
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.7]{Codigo/LDL.png}
-                \caption{$LDL^{t}$}
-                \label{fig:LDL^{t}}
-            \end{figure}
-        \end{enumerate}
-    \end{solution}    
+			      Siendo el código:
+			      \begin{figure}
+				      \centering
+				      \includegraphics[scale=0.7]{Codigo/LDL.png}
+				      \caption{$LDL^{t}$}
+				      \label{fig:LDL^{t}}
+			      \end{figure}
+		\end{enumerate}
+	\end{solution}
 \end{frame}
 \begin{frame}
-    \begin{solution}
-        \begin{enumerate}[d)]
-            \item Obtendremos las matrices:
+	\begin{solution}
+		\begin{enumerate}[d)]
+			\item Obtendremos las matrices:
 
-                \begin{equation*}
-                    L=
-                    \begin{pmatrix}
-                        1 & 0 \\
-                        -1.1 & 1
-                    \end{pmatrix}
-                    \qquad
-                    D=
-                    \begin{pmatrix}
-                        10 & 0 \\
-                        0 & 4.9
-                    \end{pmatrix}
-                \end{equation*}
+			      \begin{equation*}
+				      L=
+				      \begin{pmatrix}
+					      1    & 0 \\
+					      -1.1 & 1
+				      \end{pmatrix}
+				      \qquad
+				      D=
+				      \begin{pmatrix}
+					      10 & 0   \\
+					      0  & 4.9
+				      \end{pmatrix}
+			      \end{equation*}
 
-                Luego transformamos $A'x=b' \longrightarrow LDL^{t}x=b'$.
+			      Luego transformamos $A'x=b' \longrightarrow LDL^{t}x=b'$.
 
-                Y hacemos el siguiente artificio:
+			      Y hacemos el siguiente artificio:
 
-                $(DL^{t})\cdot x=z \qquad \longrightarrow \qquad L\cdot z=b'$
+			      $(DL^{t})\cdot x=z \qquad \longrightarrow \qquad L\cdot z=b'$
 
-                Operamos para obtener la matriz $z$.
+			      Operamos para obtener la matriz $z$.
 
-                \begin{equation*}
-                    \begin{pmatrix}
-                        1 & 0 \\
-                        -1.1 & 1
-                    \end{pmatrix}
-                    \cdot
-                    \begin{pmatrix}
-                        z_{1} \\
-                        z_{2}
-                    \end{pmatrix}
-                    =
-                    \begin{pmatrix}
-                        16632 \\
-                        -17276
-                    \end{pmatrix}
-                    \qquad
-                    \longrightarrow
-                    \qquad
-                    \begin{pmatrix}
-                        z_{1} \\
-                        z_{2}
-                    \end{pmatrix}
-                    =
-                    \begin{pmatrix}
-                        16632 \\
-                        1019.2
-                    \end{pmatrix}
-                \end{equation*}
+			      \begin{equation*}
+				      \begin{pmatrix}
+					      1    & 0 \\
+					      -1.1 & 1
+				      \end{pmatrix}
+				      \cdot
+				      \begin{pmatrix}
+					      z_{1} \\
+					      z_{2}
+				      \end{pmatrix}
+				      =
+				      \begin{pmatrix}
+					      16632 \\
+					      -17276
+				      \end{pmatrix}
+				      \qquad
+				      \longrightarrow
+				      \qquad
+				      \begin{pmatrix}
+					      z_{1} \\
+					      z_{2}
+				      \end{pmatrix}
+				      =
+				      \begin{pmatrix}
+					      16632 \\
+					      1019.2
+				      \end{pmatrix}
+			      \end{equation*}
 
-                Realizaremos el siguiente artificio:
-                $L^{t}\cdot x=s \qquad \longrightarrow \qquad D\cdot s=z$
+			      Realizaremos el siguiente artificio:
+			      $L^{t}\cdot x=s \qquad \longrightarrow \qquad D\cdot s=z$
 
-                \begin{equation*}
-                    \begin{pmatrix}
-                        10 & 0 \\
-                        0 & 4.9
-                    \end{pmatrix}
-                    \cdot
-                    \begin{pmatrix}
-                        S_{1} \\
-                        S_{2}
-                    \end{pmatrix}
-                    =
-                    \begin{pmatrix}
-                        16632 \\
-                        1019.2
-                    \end{pmatrix}
-                    \qquad
-                    \longrightarrow
-                    \qquad
-                    \begin{pmatrix}
-                        s_{1} \\
-                        s_{2}
-                    \end{pmatrix}
-                    =
-                    \begin{pmatrix}
-                        1663.2 \\
-                        208
-                    \end{pmatrix}
-                \end{equation*}
+			      \begin{equation*}
+				      \begin{pmatrix}
+					      10 & 0   \\
+					      0  & 4.9
+				      \end{pmatrix}
+				      \cdot
+				      \begin{pmatrix}
+					      S_{1} \\
+					      S_{2}
+				      \end{pmatrix}
+				      =
+				      \begin{pmatrix}
+					      16632 \\
+					      1019.2
+				      \end{pmatrix}
+				      \qquad
+				      \longrightarrow
+				      \qquad
+				      \begin{pmatrix}
+					      s_{1} \\
+					      s_{2}
+				      \end{pmatrix}
+				      =
+				      \begin{pmatrix}
+					      1663.2 \\
+					      208
+				      \end{pmatrix}
+			      \end{equation*}
 
-                Ahora resolveremos $L^{t}$$
-                
-        \end{enumerate}
-    \end{solution}
+			      Ahora resolveremos $L^{t}$$
+
+		\end{enumerate}
+	\end{solution}
 \end{frame}
