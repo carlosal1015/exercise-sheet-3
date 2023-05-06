@@ -1,11 +1,11 @@
 \section{Pregunta N$^{\circ}$30\qquad Brian Alberto Huamán Garcia}
 
-\begin{frame}
-	\begin{theorem}[Descomposición de valores singulares]
-		Si $A\in\mathbb{C}^{m\times n}$, entonces $A$ tiene una
-		descomposición de valores singulares.
-	\end{theorem}
-\end{frame}
+% \begin{frame}
+% 	\begin{theorem}[Descomposición de valores singulares]
+% 		Si $A\in\mathbb{C}^{m\times n}$, entonces $A$ tiene una
+% 		descomposición de valores singulares.
+% 	\end{theorem}
+% \end{frame}
 
 \begin{frame}
 	\begin{enumerate}\setcounter{enumi}{29}
@@ -113,15 +113,15 @@
 	\begin{solution}
 		Haciendo operaciones fila reducimos la matriz quedando:
 
-		\begin{math}
+		\begin{equation*}
 			P_{A^{T}A}
 			\left(\lambda\right)=
 			\begin{vmatrix}
 				1 & -1 & 0 \\
 				0 & 0  & 1 \\
 				0 & 0  & 0
-			\end{vmatrix} \\
-		\end{math}.
+			\end{vmatrix}.
+		\end{equation*}
 
 		Ahora hallaremos el espacio nulo mediante la siguiente ecuación:
 
@@ -145,14 +145,18 @@
 
 		Resolviendo obtenemos que el conjunto solución es:
 		\begin{equation*}
-			x_{1}=t\quad
-			x_{2}=t\quad
+			x_{1}=t,\quad
+			x_{2}=t,\quad
 			x_{3}=0.
 		\end{equation*}
-		Tenemos como conjunto solución:
-
-		\begin{math}
-			X=
+		Entonces tenemos que el autovector $v_{1}$ para $\lambda_{1}=25$:
+		\begin{equation*}
+			\begin{bmatrix}
+				x_{1} \\
+				x_{2} \\
+				x_{3}
+			\end{bmatrix}
+			=
 			\begin{bmatrix}
 				t \\
 				t \\
@@ -162,19 +166,9 @@
 				1 \\
 				1 \\
 				0
-			\end{bmatrix}t
-		\end{math}
-
-		Entonces tenemos que el autovector para $\lambda_{1}=25$ es:
-
-		\begin{math}
-			v_{1}=
-			\begin{bmatrix}
-				1 \\
-				1 \\
-				0
-			\end{bmatrix}
-		\end{math}
+			\end{bmatrix}t=
+			v_{1}t.
+		\end{equation*}
 	\end{solution}
 \end{frame}
 
@@ -182,7 +176,8 @@
 	\begin{itemize}
 		\item
 		      Para $\lambda_{2}=9$,
-		      \begin{equation}
+
+		      \begin{equation*}
 			      P_{A^{T}A}
 			      \left(\lambda\right)=
 			      \begin{vmatrix}
@@ -195,25 +190,25 @@
 				      12 & 4  & -2 \\
 				      2  & -2 & -1
 			      \end{vmatrix}.
-		      \end{equation}
+		      \end{equation*}
 		      Haciendo operaciones fila reducimos la matriz quedando:
 
-		      \begin{math}
+		      \begin{equation*}
 			      P_{A^{T}A}
 			      \left(\lambda\right)=
 			      \begin{vmatrix}
-				      1 & 0 & -1/4 \\
-				      0 & 1 & 1/4  \\
+				      1 & 0 & -\frac{1}{4} \\
+				      0 & 1 & \frac{1}{4}  \\
 				      0 & 0 & 0
 			      \end{vmatrix}
-		      \end{math}.
+		      \end{equation*}.
 
 		      Ahora hallaremos el espacio nulo mediante la siguiente ecuación:
 
 		      \begin{equation*}
 			      \begin{bmatrix}
-				      1 & 0 & -1/4 \\
-				      0 & 1 & 1/4  \\
+				      1 & 0 & -\frac{1}{4} \\
+				      0 & 1 & \frac{1}{4}  \\
 				      0 & 0 & 0
 			      \end{bmatrix}
 			      \begin{bmatrix}
@@ -225,76 +220,47 @@
 				      0 \\
 				      0 \\
 				      0
-			      \end{bmatrix}
+			      \end{bmatrix}.
 		      \end{equation*}
 
 		      Resolviendo obtenemos que el conjunto solución es:
 
-		      \begin{math}
+		      \begin{equation*}
 			      x_{1}=\frac{t}{4}\quad
 			      x_{2}=-\frac{t}{4}\quad
-			      x_{3}=t
-		      \end{math}
-		      Tenemos como conjunto solución:
+			      x_{3}=t.
+		      \end{equation*}
 
-		      \begin{math}
-			      X=
+		      Entonces tenemos que el autovector $v_{2}$ para $\lambda_{2}=9$ es:
+
+		      \begin{equation*}
 			      \begin{bmatrix}
-				      t/4  \\
-				      -t/4 \\
+				      x_{1} \\
+				      x_{2} \\
+				      x_{3}
+			      \end{bmatrix}=
+			      \begin{bmatrix}
+				      \frac{t}{4}  \\
+				      -\frac{t}{4} \\
 				      t
 			      \end{bmatrix} =
 			      \begin{bmatrix}
-				      1/4  \\
-				      -1/4 \\
+				      \frac{1}{4}  \\
+				      -\frac{1}{4} \\
 				      1
-			      \end{bmatrix}t
-		      \end{math}
-
-		      Entonces tenemos que el autovector para $\lambda_{1}=25$ es:
-		      \begin{math}
-			      v_{1}=
-			      \begin{bmatrix}
-				      1/4  \\
-				      -1/4 \\
-				      1
-			      \end{bmatrix}
-		      \end{math}
+			      \end{bmatrix}t=
+			      v_{2}t
+		      \end{equation*}
 	\end{itemize}
-        Resolviendo obtenemos que el conjunto solución es: \\
-        $x_{1}=t/4 \hspace{1cm}  x_{2}=-t/4 \hspace{1cm}  x_{3}=t$ \\
-        Tenemos como conjunto solución: \\
-            \begin{math}
-            X=
-                \begin{bmatrix} 
-    				t/4   \\
-    				-t/4   \\
-    				t
-    			\end{bmatrix} =
-                \begin{bmatrix} 
-    				1/4   \\
-    				-1/4   \\
-    				1
-    			\end{bmatrix} t \\
-         
-            \end{math}
-    
-         Entonces tenemos que el autovector para \hspace{0.2cm}$\lambda_{1}=25$ es: \\
-         $v_{2}=$
-            \begin{bmatrix} 
-				1/4   \\
-				-1/4   \\
-				1
-			\end{bmatrix} \\
-    
-		\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\begin{itemize}
 		\item
+
 		      Para $\lambda_{3}=0$,
-		      \begin{equation}
+
+		      \begin{equation*}
 			      P_{A^{T}A}
 			      \left(\lambda\right)=
 			      \begin{vmatrix}
@@ -307,175 +273,165 @@
 				      12 & 13 & -2 \\
 				      2  & -2 & 8
 			      \end{vmatrix}.
-		      \end{equation}
+		      \end{equation*}
 		      Haciendo operaciones fila reducimos la matriz quedando:
 
-		      \begin{math}
+		      \begin{equation*}
 			      P_{A^{T}A}
 			      \left(\lambda\right)=
 			      \begin{vmatrix}
 				      1 & 0 & 2  \\
 				      0 & 1 & -2 \\
 				      0 & 0 & 0
-			      \end{vmatrix}
-		      \end{math}.
-
+			      \end{vmatrix}.
+		      \end{equation*}
 		      Ahora hallaremos el espacio nulo mediante la siguiente ecuación:
 
-        Resolviendo obtenemos que el conjunto solución es: \\
-        $x_{1}=-2t \hspace{1cm}  x_{2}=2t \hspace{1cm}  x_{3}=t$ \\
-        Tenemos como conjunto solución: \\
-            \begin{math}
-            X=
-                \begin{bmatrix} 
-    				-2t   \\
-    				2t   \\
-    				t
-    			\end{bmatrix} =
-                \begin{bmatrix} 
-    				-2  \\
-    				2   \\
-    				1
-    			\end{bmatrix} t \\
-         
-            \end{math}
-    
-         Entonces tenemos que el autovector para \hspace{0.2cm}$\lambda_{1}=25$ es: \\
-         $v_{3}=$
-            \begin{bmatrix} 
-			  -2   \\
-			  2   \\
-				1
-			\end{bmatrix} \\
-    
-		\end{itemize}
-    
-\end{frame}   
-\begin{frame}
-    Encontraremos las raíces cuadradas de los autovalores propios distintos de cero:\\
-    $\sigma_{1}=\sqrt{25}=5$\\
-    $\sigma_{1}=\sqrt{9}=3$\\
+		      Resolviendo obtenemos que el conjunto solución es:
+		      \begin{equation*}
+			      x_{1}=-2t,\quad
+			      x_{2}=2t,\quad
+			      x_{3}=t
+		      \end{equation*}
 
-    La matriz $\sum$ es una matriz cero con diagonales $\sigma$ diferentes de cero.\\
-    \begin{math}
-            \sum =
-                \begin{bmatrix} 
-    			  5 & 0 & 0	   \\
-    			  0	& 3 & 0    
-    			\end{bmatrix}     
-    \end{math}
+		      Entonces tenemos que el autovector $v_{3}$ para $\lambda_{3}=0$ es:
 
-    Las columnas de la matriz V, son los vectores normalizados(unidades): \\
-    \begin{math}
-            V =
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{6} & -\frac{2}{3} \\
-    			  \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{6} & \frac{2}{3} \\
-                    0 & \frac{2\sqrt{2}}{3} & \frac{1}{3} \\
-    			\end{bmatrix}     \\
-            
-    \end{math} \\
-    Su transpuesta sería: \\
-    \begin{math}        
-            V^{T} =
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0 \\
-    			  \frac{\sqrt{2}}{6} & -\frac{\sqrt{2}}{6} & \frac{2\sqrt{2}}{3} \\
-                    -\frac{2}{3} & \frac{2}{3} & \frac{1}{3} \\
-    			\end{bmatrix}     \\
-            
-    \end{math} \\
-    Para la Matriz U , es formada por columnas $\mu$ cuyos autovalores sean diferentes de cero: \\
-    \begin{math}
-            \mu_{i} = \frac{1}{\sigma_{i}}.
-                \begin{bmatrix} 
-    			  3 & 2 & 2	   \\
-    			  2	& 3 & -2    
-    			\end{bmatrix} . v_{i} \\
-            \mu_{1} = \frac{1}{\sigma_{1}}.
-                \begin{bmatrix} 
-    			  3 & 2 & 2	   \\
-    			  2	& 3 & -2    
-    			\end{bmatrix} . v_{1} = 
-                \frac{1}{5}
-                \begin{bmatrix} 
-    			  3 & 2 & 2	   \\
-    			  2	& 3 & -2    
-    			\end{bmatrix} . 
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{2}  \\
-    			  \frac{\sqrt{2}}{2}	 \\
-                    0
-    			\end{bmatrix} = 
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{2}  \\
-    			  \frac{\sqrt{2}}{2}	
-    			\end{bmatrix} 
-
-            
-            
-    \end{math}
-
-    
+		      \begin{equation*}
+			      \begin{bmatrix}
+				      x_{1} \\
+				      x_{2} \\
+				      x_{3}
+			      \end{bmatrix}=
+			      \begin{bmatrix}
+				      -2t \\
+				      2t  \\
+				      t
+			      \end{bmatrix} =
+			      \begin{bmatrix}
+				      -2 \\
+				      2  \\
+				      1
+			      \end{bmatrix}t=
+			      v_{3}t.
+		      \end{equation*}
+	\end{itemize}
 \end{frame}
+
 \begin{frame}
-    \begin{math}
-        \mu_{2} = \frac{1}{\sigma_{2}}.
-                \begin{bmatrix} 
-    			  3 & 2 & 2	   \\
-    			  2	& 3 & -2    
-    			\end{bmatrix} . v_{2} = 
-                \frac{1}{3}
-                \begin{bmatrix} 
-    			  3 & 2 & 2	   \\
-    			  2	& 3 & -2    
-    			\end{bmatrix} . 
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{6}  \\
-    			  -\frac{\sqrt{2}}{6}	 \\
-                    \frac{2\sqrt{2}}{3}
-    			\end{bmatrix} = 
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{2}  \\
-    			  -\frac{\sqrt{2}}{2}	
-    			\end{bmatrix} 
-    \end{math} \\
-    
-    Entonces tenemos que la matriz U es:\\
-    
-    \begin{math}
-    
-            U = 
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{2} &   \frac{\sqrt{2}}{2}\\
-    			  \frac{\sqrt{2}}{2} &	  -\frac{\sqrt{2}}{2}
-    			\end{bmatrix} 
-            
-    \end{math} \\
+	\begin{solution}
+		Encontraremos las raíces cuadradas de los autovalores propios
+		distintos de cero: $\sigma_{1}=\sqrt{25}=5$ y  $\sigma_{2}=\sqrt{9}=3$.
 
-    Entonces ya tendríamos la descomposición SVD: \\
+		La matriz $\Sigma$ es una matriz cero con diagonales $\sigma_{i}$
+		diferentes de cero.
 
-    $A = U. \sum . V^{T}$ \\
+		\begin{equation*}
+			\Sigma=
+			\begin{bmatrix}
+				5 & 0 & 0 \\
+				0 & 3 & 0
+			\end{bmatrix}.
+		\end{equation*}
 
-    \begin{math}
-                \begin{bmatrix}
-				    3 & 2 & 2  \\
-				    2 & 3 & -2
-			    \end{bmatrix}=
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{2} &   \frac{\sqrt{2}}{2}\\
-    			  \frac{\sqrt{2}}{2} &	  -\frac{\sqrt{2}}{2}
-    			\end{bmatrix} .
-                \begin{bmatrix} 
-    			  5 & 0 & 0	   \\
-    			  0	& 3 & 0    
-    			\end{bmatrix} .
-                \begin{bmatrix} 
-    			  \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0 \\
-    			  \frac{\sqrt{2}}{6} & -\frac{\sqrt{2}}{6} & \frac{2\sqrt{2}}{3} \\
-                    -\frac{2}{3} & \frac{2}{3} & \frac{1}{3} \\
-    			\end{bmatrix}  
-            
-    \end{math} \\
-    
+		Las columnas de la matriz $V$, son los vectores normalizados:
+		\begin{equation*}
+			V =
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{6}  & -\frac{2}{3} \\
+				\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{6} & \frac{2}{3}  \\
+				0                  & \frac{2\sqrt{2}}{3} & \frac{1}{3}
+			\end{bmatrix}.
+		\end{equation*}
+
+		Su transpuesta sería
+		\begin{equation*}
+			V^{T} =
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  & 0                   \\
+				\frac{\sqrt{2}}{6} & -\frac{\sqrt{2}}{6} & \frac{2\sqrt{2}}{3} \\
+				-\frac{2}{3}       & \frac{2}{3}         & \frac{1}{3}         \\
+			\end{bmatrix}.
+		\end{equation*}
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{solution}
+		La matriz $U$ está formada por columnas $\mu$ cuyos autovalores sean diferentes de cero:
+
+		\begin{align*}
+			\mu_{1} & =
+			\frac{1}{\sigma_{i}}.
+			\begin{bmatrix}
+				3 & 2 & 2  \\
+				2 & 3 & -2
+			\end{bmatrix}
+			v_{i}=
+			\frac{1}{5}
+			\begin{bmatrix}
+				3 & 2 & 2  \\
+				2 & 3 & -2
+			\end{bmatrix}
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{2} \\
+				\frac{\sqrt{2}}{2} \\
+				0
+			\end{bmatrix}=
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{2} \\
+				\frac{\sqrt{2}}{2}
+			\end{bmatrix}. \\
+			\mu_{2} & =
+			\frac{1}{\sigma_{2}}
+			\begin{bmatrix}
+				3 & 2 & 2  \\
+				2 & 3 & -2
+			\end{bmatrix}v_{2}=
+			\frac{1}{3}
+			\begin{bmatrix}
+				3 & 2 & 2  \\
+				2 & 3 & -2
+			\end{bmatrix}
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{6}  \\
+				-\frac{\sqrt{2}}{6} \\
+				\frac{2\sqrt{2}}{3}
+			\end{bmatrix}=
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{2} \\
+				-\frac{\sqrt{2}}{2}
+			\end{bmatrix}.
+		\end{align*}
+		Entonces tenemos que la matriz $U$ es:
+		\begin{math}
+			U =
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  \\
+				\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2}
+			\end{bmatrix}
+		\end{math}
+
+		Entonces ya tendríamos la descomposición SVD $A=U\Sigma V^{T}$:
+
+		\begin{equation*}
+			A=
+			\begin{bmatrix}
+				3 & 2 & 2  \\
+				2 & 3 & -2
+			\end{bmatrix}=
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  \\
+				\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2}
+			\end{bmatrix}
+			\begin{bmatrix}
+				5 & 0 & 0 \\
+				0 & 3 & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  & 0                   \\
+				\frac{\sqrt{2}}{6} & -\frac{\sqrt{2}}{6} & \frac{2\sqrt{2}}{3} \\
+				-\frac{2}{3}       & \frac{2}{3}         & \frac{1}{3}         \\
+			\end{bmatrix}.
+		\end{equation*}
+	\end{solution}
 \end{frame}
